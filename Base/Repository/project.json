@@ -1,0 +1,7 @@
+{
+
+    "ConnectionStrings": {
+        "StandardDbContext": "Data Source=10.1.100.10;Initial Catalog=standard;Integrated Security=False;User ID=Bvjw3Za8HLuzbpX;Password=jwambKx28r9QbWVwehC4FNExBVSh7pd3;Connect Timeout=30;Encrypt=true;TrustServerCertificate=true;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true;"
+    }
+
+}

@@ -2,6 +2,7 @@
 using OpenPath.Utility.Repository.Interface;
 using OpenPath.Utility.Repository.Poco;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -94,8 +95,7 @@ namespace OpenPath.Utility.Repository.Data {
             var query = _dbContext
                 .Set<TEntity>()
                 .Where(
-                    (Expression<Func<TEntity, bool>>)
-                    Expression.Lambda(
+                    (Expression<Func<TEntity, bool>>) Expression.Lambda(
                         Expression.Equal(
                             Expression.Property(parameter, key.Properties[0].Name),
                             Expression.Constant(id)
@@ -110,7 +110,7 @@ namespace OpenPath.Utility.Repository.Data {
 
         public IQueryable<TEntity> List() {
 
-            return _dbContext.Set<TEntity>();                                    
+            return _dbContext.Set<TEntity>();
 
         }
 
@@ -118,9 +118,24 @@ namespace OpenPath.Utility.Repository.Data {
 
             if (filter == null) filter = new FilterPoco() as IFilter;
 
-            return query                
+            return query
                 .Skip((filter.Page - 1) * filter.Limit)
-                .Take(filter.Limit);                                    
+                .Take(filter.Limit);
+
+        }
+
+        public void Remove(TEntity entity) {
+
+            _dbContext.Set<TEntity>()
+                .Remove(entity);
+
+        }
+
+        public void RemoveRange(IEnumerable<TEntity> entities) {
+            
+            _dbContext
+                .Set<TEntity>()
+                .RemoveRange(entities);
 
         }
 

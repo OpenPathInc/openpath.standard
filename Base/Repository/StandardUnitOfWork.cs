@@ -1,9 +1,6 @@
 ﻿using OpenPath.Standard.Base.Repository.Data;
 using OpenPath.Standard.Base.Repository.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OpenPath.Standard.Base.Repository {

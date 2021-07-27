@@ -1,11 +1,7 @@
-﻿using OpenPath.Standard.Base.Data.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Repository.Interface {
+namespace OpenPath.Utility.Repository.Interface {
 
     public interface IRepository<TEntity, TKey> where TEntity : class {
 

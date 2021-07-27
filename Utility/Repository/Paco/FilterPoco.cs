@@ -1,13 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OpenPath.Standard.Base.Data.Abstract;
-using OpenPath.Standard.Base.Data.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenPath.Utility.Repository.Abstract;
 
-namespace OpenPath.Standard.Base.Data.Poco {
+namespace OpenPath.Utility.Repository.Poco {
 
     public class FilterPoco : FilterAbstract {
 
@@ -21,7 +15,7 @@ namespace OpenPath.Standard.Base.Data.Poco {
         public override object Clone(int page) {
 
             var jsonString = JsonConvert.SerializeObject(this);
-            var clone = JsonConvert.DeserializeObject<PlanetFilterPoco>(jsonString);
+            var clone = JsonConvert.DeserializeObject<FilterPoco>(jsonString);
 
             clone.Page += page;
 

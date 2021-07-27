@@ -1,21 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using OpenPath.Standard.Base.Repository;
 using OpenPath.Standard.Base.Repository.Interface;
 using OpenPath.Standard.Base.Service;
 using OpenPath.Standard.Base.Service.Interface;
+using System.Text.Json.Serialization;
 
 namespace OpenPath.Standard.Api {
     public class Startup {
@@ -37,11 +31,19 @@ namespace OpenPath.Standard.Api {
 
             services.AddScoped<IPlanetService, PlanetService>();
 
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddJsonOptions(
+                    _ =>
+                    _.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())
+                );
 
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication2", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenPath.Standard.Api", Version = "v1" });
+                c.UseInlineDefinitionsForEnums();
             });
+
+            services.AddSwaggerGenNewtonsoftSupport();
 
         }
 

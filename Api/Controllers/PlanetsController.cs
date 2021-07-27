@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Service.Interface;
-using Newtonsoft.Json;
 using OpenPath.Standard.Base.Data.Poco;
 
 namespace OpenPath.Standard.Api.Controllers {
@@ -46,7 +44,7 @@ namespace OpenPath.Standard.Api.Controllers {
             var previousUrl = previousFilter.Page <= 0 ? null : this.Url.Action("Get", null, previousFilter, Request.Scheme);  
   
             result.NextPage = !String.IsNullOrWhiteSpace(nextUrl) ? new Uri(nextUrl) : null;  
-            result.PreviousPage = !String.IsNullOrWhiteSpace(previousUrl) ? new Uri(previousUrl) : null;  
+            result.LastPage = !String.IsNullOrWhiteSpace(previousUrl) ? new Uri(previousUrl) : null;  
 
             return Ok(result);
 

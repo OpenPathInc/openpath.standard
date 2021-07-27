@@ -4,10 +4,6 @@ using Microsoft.Extensions.Configuration;
 using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Repository.Interface;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
 
 namespace OpenPath.Standard.Base.Repository {
 

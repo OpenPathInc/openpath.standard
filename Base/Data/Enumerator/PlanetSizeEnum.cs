@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace OpenPath.Standard.Base.Data.Enumerator {
 
     public enum PlanetSizeEnum {
 
-        Small = 100,
-        Medium = 200,
-        Large = 300
+        [EnumMember(Value = "small")]
+        Small,
+
+        [EnumMember(Value = "medium")]
+        Medium,
+
+        [EnumMember(Value = "large")]
+        Large
 
     }
 

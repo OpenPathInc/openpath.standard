@@ -1,15 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OpenPath.Standard.Base.Data.Interface;
-using OpenPath.Standard.Base.Data.Poco;
-using OpenPath.Standard.Base.Repository.Interface;
+using OpenPath.Utility.Repository.Interface;
+using OpenPath.Utility.Repository.Poco;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Repository.Data {
+namespace OpenPath.Utility.Repository.Data {
 
     public class BaseRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class {
 

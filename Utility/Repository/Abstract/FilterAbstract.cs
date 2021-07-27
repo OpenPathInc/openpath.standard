@@ -1,16 +1,15 @@
-﻿using OpenPath.Standard.Base.Data.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Newtonsoft.Json;
+using OpenPath.Utility.Repository.Interface;
 
-namespace OpenPath.Standard.Base.Data.Abstract {
+namespace OpenPath.Utility.Repository.Abstract {
 
     public abstract class FilterAbstract : IFilter, ICloneable {
 
+        [JsonProperty("page")]
         public int Page { get; set; } = 1;
 
+        [JsonProperty("limit")]
         public int Limit { get; set; } = 20; 
   
         public abstract object Clone();

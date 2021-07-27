@@ -3,10 +3,7 @@ using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Data.Poco;
 using OpenPath.Standard.Base.Repository.Interface;
 using OpenPath.Standard.Base.Service.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OpenPath.Standard.Base.Service {

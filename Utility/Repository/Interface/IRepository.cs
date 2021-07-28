@@ -10,6 +10,10 @@ namespace OpenPath.Utility.Repository.Interface {
 
         Task AddAsync(TEntity entity);
 
+        void AddRange(IEnumerable<TEntity> entities);
+
+        Task AddRangeAsync(IEnumerable<TEntity> entities);
+
         TEntity GetById(TKey id);
 
         Task<TEntity> GetByIdAsync(TKey id);
@@ -21,6 +25,10 @@ namespace OpenPath.Utility.Repository.Interface {
         void Remove(TEntity entity);
 
         void RemoveRange(IEnumerable<TEntity> entities);
+
+        void RemoveById(TKey id);
+
+        void RemoveRangeById(IEnumerable<TKey> ids);
 
     }
 

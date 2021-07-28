@@ -35,6 +35,22 @@ namespace OpenPath.Utility.Repository.Data {
 
         }
 
+        public void AddRange(IEnumerable<TEntity> entities) {
+            
+            _dbContext
+                .Set<TEntity>()
+                .AddRange(entities);
+
+        }
+
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities) {
+            
+            await _dbContext
+                .Set<TEntity>()
+                .AddRangeAsync(entities);
+
+        }
+
         public TEntity GetById(TKey id) {
 
             var entityType = _dbContext.Model.FindEntityType(typeof(TEntity));
@@ -139,6 +155,47 @@ namespace OpenPath.Utility.Repository.Data {
 
         }
 
+        public void RemoveById(TKey id) {
+
+            var entityType = _dbContext.Model.FindEntityType(typeof(TEntity));
+            var key = entityType.FindPrimaryKey();
+            var entries = _dbContext.ChangeTracker.Entries<TEntity>();
+
+            var i = 0;
+
+            foreach (var property in key.Properties) {
+
+                entries = entries.Where(e => e.Property(property.Name).CurrentValue == id as object);
+                i++;
+
+            }
+
+            var entry = entries.First();
+
+            if (entry != null) Remove(entry.Entity);
+
+            var parameter = Expression.Parameter(typeof(TEntity), "x");
+            var query = _dbContext
+                .Set<TEntity>()
+                .Where(
+                    (Expression<Func<TEntity, bool>>) Expression.Lambda(
+                        Expression.Equal(
+                            Expression.Property(parameter, key.Properties[0].Name),
+                            Expression.Constant(id)
+                        ),
+                        parameter
+                    )
+                );
+
+            Remove(query.First());
+
+        }
+
+        public void RemoveRangeById(IEnumerable<TKey> ids) {
+
+            throw new NotImplementedException();
+
+        }
     }
 
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Service.Interface;
 using OpenPath.Standard.Base.Data.Poco;
+using System.Collections.Generic;
 
 namespace OpenPath.Standard.Api.Controllers {
 
@@ -23,6 +24,15 @@ namespace OpenPath.Standard.Api.Controllers {
 
             _logger = logger;
             _planetService = planetService;
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody]IEnumerable<PlanetModel> planets) {
+
+            await _planetService.AddAsync(planets);
+
+            return Ok(planets);
 
         }
 
@@ -50,10 +60,12 @@ namespace OpenPath.Standard.Api.Controllers {
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody]PlanetModel planet) {
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAsync([FromBody]long id) {
 
-            return Ok(await _planetService.AddAsync(planet));
+            await _planetService.RemoveAsync(id);
+
+            return Ok();
 
         }
 

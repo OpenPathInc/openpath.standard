@@ -75,15 +75,30 @@ namespace OpenPath.Standard.Base.Service {
 
         }
 
-        public async Task<PlanetModel> AddAsync(PlanetModel planet) {
+        public async Task AddAsync(PlanetModel planet) {
 
             await _standardUnitOfWork.Planets.AddAsync(planet);
 
             var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
-            return planet;
+        }
+
+        public async Task AddAsync(IEnumerable<PlanetModel> planets) {
+
+            await _standardUnitOfWork.Planets.AddRangeAsync(planets);
+
+            var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
         }
+
+        public async Task RemoveAsync(long id) {
+
+            _standardUnitOfWork.Planets.RemoveById(id);
+
+            var rowsUpdated = await _standardUnitOfWork.CommitAsync();
+
+        }
+
 
     }
 

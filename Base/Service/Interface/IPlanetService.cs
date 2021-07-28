@@ -7,9 +7,13 @@ namespace OpenPath.Standard.Base.Service.Interface {
 
     public interface IPlanetService {
 
-        Task<PlanetModel> AddAsync(PlanetModel planet);
+        Task AddAsync(PlanetModel planet);
+
+        Task AddAsync(IEnumerable<PlanetModel> planets);
 
         Task<IEnumerable<PlanetModel>> ListAsync(PlanetFilterPoco filter);
+
+        Task RemoveAsync(long id);
 
     }
 

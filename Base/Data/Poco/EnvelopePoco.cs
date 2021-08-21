@@ -15,6 +15,9 @@ namespace OpenPath.Standard.Base.Data.Poco {
         [JsonProperty("last_page")]
         public Uri LastPage { get; set; }
 
+        [JsonProperty("current_page")]
+        public Uri CurrentPage { get; set; }
+
     }
 
 }

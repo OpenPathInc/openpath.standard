@@ -6,29 +6,29 @@ namespace OpenPath.Utility.Repository.Interface {
 
     public interface IRepository<TEntity, TKey> where TEntity : class {
 
-        void Add(TEntity entity);
+        void Create(TEntity entity);
 
-        Task AddAsync(TEntity entity);
+        Task CreateAsync(TEntity entity);
 
-        void AddRange(IEnumerable<TEntity> entities);
+        void CreateRange(IEnumerable<TEntity> entities);
 
-        Task AddRangeAsync(IEnumerable<TEntity> entities);
+        Task CreateRangeAsync(IEnumerable<TEntity> entities);
 
-        TEntity GetById(TKey id);
+        TEntity ReadById(TKey id);
 
-        Task<TEntity> GetByIdAsync(TKey id);
+        Task<TEntity> ReadByIdAsync(TKey id);
 
-        IQueryable<TEntity> List();
+        IQueryable<TEntity> Read();
 
         IQueryable<TEntity> Filter(IQueryable<TEntity> query, IFilter filter);
 
-        void Remove(TEntity entity);
+        void Delete(TEntity entity);
 
-        void RemoveRange(IEnumerable<TEntity> entities);
+        void DeleteRange(IEnumerable<TEntity> entities);
 
-        void RemoveById(TKey id);
+        void DeleteById(TKey id);
 
-        void RemoveRangeById(IEnumerable<TKey> ids);
+        void DeleteRangeById(IEnumerable<TKey> ids);
 
     }
 

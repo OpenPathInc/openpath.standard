@@ -31,7 +31,7 @@ namespace OpenPath.Standard.Base.Service {
             if (filter.Limit == 0) return null;
 
             // build query
-            var planetsQuery = _standardUnitOfWork.Planets.List();
+            var planetsQuery = _standardUnitOfWork.Planets.Read();
 
             // add custom filters
             if (filter.PlanetSize != null) {
@@ -77,7 +77,7 @@ namespace OpenPath.Standard.Base.Service {
 
         public async Task AddAsync(PlanetModel planet) {
 
-            await _standardUnitOfWork.Planets.AddAsync(planet);
+            await _standardUnitOfWork.Planets.CreateAsync(planet);
 
             var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
@@ -85,7 +85,7 @@ namespace OpenPath.Standard.Base.Service {
 
         public async Task AddAsync(IEnumerable<PlanetModel> planets) {
 
-            await _standardUnitOfWork.Planets.AddRangeAsync(planets);
+            await _standardUnitOfWork.Planets.CreateRangeAsync(planets);
 
             var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
@@ -93,7 +93,7 @@ namespace OpenPath.Standard.Base.Service {
 
         public async Task RemoveAsync(long id) {
 
-            _standardUnitOfWork.Planets.RemoveById(id);
+            _standardUnitOfWork.Planets.DeleteById(id);
 
             var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 

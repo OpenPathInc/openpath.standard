@@ -14,21 +14,23 @@ namespace OpenPath.Standard.Api.Controllers {
     [Route("[controller]")]
     public class PlanetsController : ControllerBase {
 
+        private readonly ILoggerFactory _loggerFactory;
         private readonly ILogger<PlanetsController> _logger;
         private readonly IPlanetService _planetService;
 
         public PlanetsController(
-            ILogger<PlanetsController> logger,
+            ILoggerFactory loggerFactory,
             IPlanetService planetService
         ) {
 
-            _logger = logger;
+            _loggerFactory = loggerFactory;
+            _logger = loggerFactory.CreateLogger<PlanetsController>();
             _planetService = planetService;
 
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody]IEnumerable<PlanetModel> planets) {
+        public async Task<IActionResult> PostAsync([FromBody] IEnumerable<PlanetModel> planets) {
 
             await _planetService.AddAsync(planets);
 
@@ -41,27 +43,22 @@ namespace OpenPath.Standard.Api.Controllers {
 
             var filteredPlanets = await _planetService.ListAsync(filter);
 
-            //Get the data for the current page  
-            var result = new EnvelopePoco<PlanetModel>();
-            result.Data = filteredPlanets;
-  
-            //Get next page URL string  
-            var nextFilter = filter.Clone(1) as PlanetFilterPoco;  
-            var nextUrl = (await _planetService.ListAsync(nextFilter)).Count() <= 0 ? null : this.Url.Action("Get", null, nextFilter, Request.Scheme);  
-  
-            //Get previous page URL string  
-            var previousFilter = filter.Clone(-1) as PlanetFilterPoco;  
-            var previousUrl = previousFilter.Page <= 0 ? null : this.Url.Action("Get", null, previousFilter, Request.Scheme);  
-  
-            result.NextPage = !String.IsNullOrWhiteSpace(nextUrl) ? new Uri(nextUrl) : null;  
-            result.LastPage = !String.IsNullOrWhiteSpace(previousUrl) ? new Uri(previousUrl) : null;  
+            var envelope = new EnvelopePoco<PlanetModel>();
+            var nextFilter = filter.Clone(1) as PlanetFilterPoco;
+            var previousFilter = filter.Clone(-1) as PlanetFilterPoco;
+            var nextUrl = (await _planetService.ListAsync(nextFilter)).Count() <= 0 ? null : this.Url.Action("Get", null, nextFilter, Request.Scheme);
+            var previousUrl = previousFilter.Page <= 0 ? null : this.Url.Action("Get", null, previousFilter, Request.Scheme);
 
-            return Ok(result);
+            envelope.Data = filteredPlanets;
+            envelope.NextPage = !String.IsNullOrWhiteSpace(nextUrl) ? new Uri(nextUrl) : null;
+            envelope.LastPage = !String.IsNullOrWhiteSpace(previousUrl) ? new Uri(previousUrl) : null;
+
+            return Ok(envelope);
 
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteAsync([FromBody]long id) {
+        [HttpDelete("/{id}")]
+        public async Task<IActionResult> DeleteAsync(long id) {
 
             await _planetService.RemoveAsync(id);
 

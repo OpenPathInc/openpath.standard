@@ -12,121 +12,100 @@ namespace OpenPath.Utility.Repository.Data {
     public class BaseRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class {
 
         protected readonly DbContext _dbContext;
+        internal DbSet<TEntity> _dbSet;
 
         public BaseRepository(DbContext dbContext) {
 
             _dbContext = dbContext;
+            _dbSet = _dbContext.Set<TEntity>();
 
         }
 
-        public void Add(TEntity entity) {
+        public void Create(TEntity entity) {
 
-            _dbContext
-                .Set<TEntity>()
-                .Add(entity);
+            _dbSet.Add(entity);
 
         }
 
-        public async Task AddAsync(TEntity entity) {
+        public async Task CreateAsync(TEntity entity) {
 
-            await _dbContext
-                .Set<TEntity>()
-                .AddAsync(entity);
+            await _dbSet.AddAsync(entity);
 
         }
 
-        public void AddRange(IEnumerable<TEntity> entities) {
-            
-            _dbContext
-                .Set<TEntity>()
-                .AddRange(entities);
+        public void CreateRange(IEnumerable<TEntity> entities) {
+
+            _dbSet.AddRange(entities);
 
         }
 
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities) {
-            
+        public async Task CreateRangeAsync(IEnumerable<TEntity> entities) {
+
             await _dbContext
                 .Set<TEntity>()
                 .AddRangeAsync(entities);
 
         }
 
-        public TEntity GetById(TKey id) {
+        public IQueryable<TEntity> Read() {
 
-            var entityType = _dbContext.Model.FindEntityType(typeof(TEntity));
-            var key = entityType.FindPrimaryKey();
-            var entries = _dbContext.ChangeTracker.Entries<TEntity>();
-
-            var i = 0;
-
-            foreach (var property in key.Properties) {
-
-                entries = entries.Where(e => e.Property(property.Name).CurrentValue == id as object);
-                i++;
-
-            }
-
-            var entry = entries.First();
-
-            if (entry != null) return entry.Entity;
-
-            var parameter = Expression.Parameter(typeof(TEntity), "x");
-            var query = _dbContext
-                .Set<TEntity>()
-                .Where(
-                    (Expression<Func<TEntity, bool>>)
-                    Expression.Lambda(
-                        Expression.Equal(
-                            Expression.Property(parameter, key.Properties[0].Name),
-                            Expression.Constant(id)
-                        ),
-                        parameter
-                    )
-                );
-
-            return query.First();
+            return _dbSet;
 
         }
 
-        public async Task<TEntity> GetByIdAsync(TKey id) {
+        public TEntity ReadById(TKey id) {
 
-            var entityType = _dbContext.Model.FindEntityType(typeof(TEntity));
-            var key = entityType.FindPrimaryKey();
-            var entries = _dbContext.ChangeTracker.Entries<TEntity>();
-
-            var i = 0;
-
-            foreach (var property in key.Properties) {
-
-                entries = entries.Where(e => e.Property(property.Name).CurrentValue == id as object);
-                i++;
-
-            }
-
-            var entry = entries.First();
-
-            if (entry != null) return entry.Entity;
-
-            var parameter = Expression.Parameter(typeof(TEntity), "x");
-            var query = _dbContext
-                .Set<TEntity>()
-                .Where(
-                    (Expression<Func<TEntity, bool>>) Expression.Lambda(
-                        Expression.Equal(
-                            Expression.Property(parameter, key.Properties[0].Name),
-                            Expression.Constant(id)
-                        ),
-                        parameter
-                    )
-                );
-
-            return await query.FirstAsync();
+            return _dbSet.Find(id);
 
         }
 
-        public IQueryable<TEntity> List() {
+        public async Task<TEntity> ReadByIdAsync(TKey id) {
 
-            return _dbContext.Set<TEntity>();
+            return await _dbSet.FindAsync(id);
+
+        }
+
+        public async Task<bool> UpdateAsync(TEntity entity) {
+
+            var existingEntityId = getPrimaryKey(entity);
+            var existingEntity = await ReadByIdAsync(existingEntityId);
+
+            existingEntity = entity;
+
+            return true;
+
+
+        }
+
+        public void Delete(TEntity entity) {
+
+            _dbSet.Remove(entity);
+
+        }
+
+        public void DeleteRange(IEnumerable<TEntity> entities) {
+
+            _dbContext
+                .Set<TEntity>()
+                .RemoveRange(entities);
+
+        }
+
+        public void DeleteById(TKey id) {
+
+            var entity = ReadById(id);
+
+            Delete(entity);
+
+        }
+
+        public void DeleteRangeById(IEnumerable<TKey> ids) {
+
+            foreach (var id in ids) {
+
+                DeleteById(id);
+
+            }
 
         }
 
@@ -140,62 +119,15 @@ namespace OpenPath.Utility.Repository.Data {
 
         }
 
-        public void Remove(TEntity entity) {
+        private TKey getPrimaryKey(TEntity entity) {
 
-            _dbContext.Set<TEntity>()
-                .Remove(entity);
+            var keyName = _dbContext.Model.FindEntityType(typeof(TEntity)).FindPrimaryKey().Properties
+                .Select(x => x.Name).Single();
 
-        }
-
-        public void RemoveRange(IEnumerable<TEntity> entities) {
-            
-            _dbContext
-                .Set<TEntity>()
-                .RemoveRange(entities);
+            return (TKey)entity.GetType().GetProperty(keyName).GetValue(entity, null);
 
         }
 
-        public void RemoveById(TKey id) {
-
-            var entityType = _dbContext.Model.FindEntityType(typeof(TEntity));
-            var key = entityType.FindPrimaryKey();
-            var entries = _dbContext.ChangeTracker.Entries<TEntity>();
-
-            var i = 0;
-
-            foreach (var property in key.Properties) {
-
-                entries = entries.Where(e => e.Property(property.Name).CurrentValue == id as object);
-                i++;
-
-            }
-
-            var entry = entries.First();
-
-            if (entry != null) Remove(entry.Entity);
-
-            var parameter = Expression.Parameter(typeof(TEntity), "x");
-            var query = _dbContext
-                .Set<TEntity>()
-                .Where(
-                    (Expression<Func<TEntity, bool>>) Expression.Lambda(
-                        Expression.Equal(
-                            Expression.Property(parameter, key.Properties[0].Name),
-                            Expression.Constant(id)
-                        ),
-                        parameter
-                    )
-                );
-
-            Remove(query.First());
-
-        }
-
-        public void RemoveRangeById(IEnumerable<TKey> ids) {
-
-            throw new NotImplementedException();
-
-        }
     }
 
 }

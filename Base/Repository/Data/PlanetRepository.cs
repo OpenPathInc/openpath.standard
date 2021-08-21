@@ -16,7 +16,7 @@ namespace OpenPath.Standard.Base.Repository.Data {
             if (maximum == null) maximum = double.MaxValue;
 
             // build and return query
-            var query = List()
+            var query = Read()
                 .Where(
                     _ =>
                     _.EquatorialDiameter >= minimum &&

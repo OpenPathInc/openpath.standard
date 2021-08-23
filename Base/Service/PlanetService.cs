@@ -3,7 +3,9 @@ using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Data.Poco;
 using OpenPath.Standard.Base.Repository.Interface;
 using OpenPath.Standard.Base.Service.Interface;
+using OpenPath.Utility.Repository.Helper;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OpenPath.Standard.Base.Service {
@@ -75,17 +77,51 @@ namespace OpenPath.Standard.Base.Service {
 
         }
 
-        public async Task AddAsync(PlanetModel planet) {
+        public async Task AddUpdateAsync(PlanetModel planet) {
 
-            await _standardUnitOfWork.Planets.CreateAsync(planet);
+            if (planet == null) throw new System.ArgumentNullException("Planet", "Planet object cannot be null");
+
+            var add = planet.Id <= 0;
+
+            if(add) {
+
+                await _standardUnitOfWork.Planets.CreateAsync(planet);
+
+            }
+            else {
+
+                var currentPlanet = await _standardUnitOfWork.Planets.ReadByIdAsync(planet.Id);
+
+                updateChanged(currentPlanet, planet);
+
+            }            
 
             var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
         }
 
-        public async Task AddAsync(IEnumerable<PlanetModel> planets) {
+        public async Task AddUpdateAsync(IEnumerable<PlanetModel> planets) {
 
-            await _standardUnitOfWork.Planets.CreateRangeAsync(planets);
+            var addPlanets = planets.Where(planet => planet.Id <= 0);
+            var updatePlanets = planets.Where(planet => planet.Id > 0);
+
+            if (addPlanets != null && addPlanets.Count() > 0) {
+
+                await _standardUnitOfWork.Planets.CreateRangeAsync(planets);
+
+            }
+
+            if (updatePlanets != null && updatePlanets.Count() > 0) {
+
+                foreach(var planet in updatePlanets) {
+
+                    var currentPlanet = await _standardUnitOfWork.Planets.ReadByIdAsync(planet.Id);
+
+                    updateChanged(currentPlanet, planet);
+
+                }
+
+            }
 
             var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
@@ -99,6 +135,18 @@ namespace OpenPath.Standard.Base.Service {
 
         }
 
+        private void updateChanged(PlanetModel originalPlanet, PlanetModel updatedPlanet) {
+
+            originalPlanet.Density = DataHelper.CompareAndReplace<double>(originalPlanet.Density, updatedPlanet.Density);
+            originalPlanet.DeviationFromF = DataHelper.CompareAndReplace<int>(originalPlanet.DeviationFromF, updatedPlanet.DeviationFromF);
+            originalPlanet.EquatorialDiameter = DataHelper.CompareAndReplace<double>(originalPlanet.EquatorialDiameter, updatedPlanet.EquatorialDiameter);
+            originalPlanet.F = DataHelper.CompareAndReplace<double>(originalPlanet.F, updatedPlanet.F);
+            originalPlanet.FlatteningRatio = DataHelper.CompareAndReplace<double>(originalPlanet.FlatteningRatio, updatedPlanet.FlatteningRatio);
+            originalPlanet.Name = DataHelper.CompareAndReplace<string>(originalPlanet.Name, updatedPlanet.Name);
+            originalPlanet.PolarDiameter = DataHelper.CompareAndReplace<double>(originalPlanet.PolarDiameter, updatedPlanet.PolarDiameter);
+            originalPlanet.RotationPeriod = DataHelper.CompareAndReplace<double>(originalPlanet.RotationPeriod, updatedPlanet.RotationPeriod);
+
+        }
 
     }
 

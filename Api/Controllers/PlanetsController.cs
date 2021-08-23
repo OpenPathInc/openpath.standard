@@ -32,7 +32,7 @@ namespace OpenPath.Standard.Api.Controllers {
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] IEnumerable<PlanetModel> planets) {
 
-            await _planetService.AddAsync(planets);
+            await _planetService.AddUpdateAsync(planets);
 
             return Ok(planets);
 

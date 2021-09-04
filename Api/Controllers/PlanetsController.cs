@@ -12,7 +12,7 @@ namespace OpenPath.Standard.Api.Controllers {
 
     [ApiController]
     [Route("[controller]")]
-    public class PlanetsController : ControllerBase {
+    public class PlanetsController : BaseContoller {
 
         private readonly ILoggerFactory _loggerFactory;
         private readonly ILogger<PlanetsController> _logger;
@@ -34,6 +34,8 @@ namespace OpenPath.Standard.Api.Controllers {
 
             await _planetService.AddUpdateAsync(planets);
 
+            var envelope = new EnvelopePoco<PlanetModel>();
+
             return Ok(planets);
 
         }
@@ -43,7 +45,7 @@ namespace OpenPath.Standard.Api.Controllers {
 
             var filteredPlanets = await _planetService.ListAsync(filter);
 
-            var envelope = new EnvelopePoco<PlanetModel>();
+            var envelope = new EnvelopePoco<IEnumerable<PlanetModel>>();
             var nextFilter = filter.Clone(1) as PlanetFilterPoco;
             var previousFilter = filter.Clone(-1) as PlanetFilterPoco;
             var nextUrl = (await _planetService.ListAsync(nextFilter)).Count() <= 0 ? null : this.Url.Action("Get", null, nextFilter, Request.Scheme);
@@ -57,10 +59,34 @@ namespace OpenPath.Standard.Api.Controllers {
 
         }
 
-        [HttpDelete("/{id}")]
-        public async Task<IActionResult> DeleteAsync(long id) {
+        [HttpGet("{idKey}")]
+        public async Task<IActionResult> Get(string idKey) {
 
-            await _planetService.RemoveAsync(id);
+            var id = long.Parse("0");
+            var isNumeric = long.TryParse(idKey, out id);
+
+            var planet = isNumeric ? await _planetService.GetAsync(id) : await _planetService.GetAsync(idKey);
+            
+            var envelope = new EnvelopePoco<PlanetModel>();
+
+            envelope.Data = planet;
+
+            return Ok(envelope);
+
+        }
+
+        [HttpDelete("{idKey}")]
+        public async Task<IActionResult> DeleteAsync(string idKey) {
+
+            var id = long.Parse("0");
+            var isNumeric = long.TryParse(idKey, out id);
+
+            if (isNumeric) {
+                await _planetService.RemoveAsync(id);
+            }
+            else {
+                await _planetService.RemoveAsync(idKey);
+            }
 
             return Ok();
 

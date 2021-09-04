@@ -1,7 +1,9 @@
-﻿using OpenPath.Standard.Base.Data.Database;
+﻿using Microsoft.EntityFrameworkCore;
+using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Repository.Interface;
 using OpenPath.Utility.Repository.Data;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace OpenPath.Standard.Base.Repository.Data {
 
@@ -27,5 +29,44 @@ namespace OpenPath.Standard.Base.Repository.Data {
 
         }
 
+        public async Task<bool> KeyExistsAsync(string key) {
+
+            var result = await Read()
+                .Where(_ => _.Key == key)
+                .Select(_ => _.Key)
+                .FirstOrDefaultAsync();
+
+            return result != null;
+
+        }
+
+        public async Task<PlanetModel> ReadByKeyAsync(string key) {
+
+            var result = await Read()
+                .Where(_ => _.Key == key)
+                .FirstOrDefaultAsync();
+
+            return result;
+
+        }
+
+        public void DeleteByKey(string key) {
+
+            var entity = Read()
+                .Where(_ => _.Key == key)
+                .FirstOrDefault();
+
+            Delete(entity);
+
+        }
+
+        public async Task DeleteByKeyAsync(string key) {
+
+            var entity = await ReadByKeyAsync(key);
+
+            Delete(entity);
+
+        }
     }
+
 }

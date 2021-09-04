@@ -15,6 +15,12 @@ namespace OpenPath.Standard.Base.Service.Interface {
 
         Task RemoveAsync(long id);
 
+        Task RemoveAsync(string key);
+
+        Task<PlanetModel> GetAsync(long id);
+
+        Task<PlanetModel> GetAsync(string key);
+
     }
 
 }

@@ -7,7 +7,7 @@ namespace OpenPath.Standard.Base.Data.Poco {
     public class EnvelopePoco<T> where T : class {
 
         [JsonProperty("data")]
-        public IEnumerable<T> Data { get; set; }
+        public T Data { get; set; }
 
         [JsonProperty("next_page")]
         public Uri NextPage { get; set; }

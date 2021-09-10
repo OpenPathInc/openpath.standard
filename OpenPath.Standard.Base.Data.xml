@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenPath.Standard.Base.Data</name>
+    </assembly>
+    <members>
+        <member name="T:OpenPath.Standard.Base.Data.Database.PlanetModel">
+            <summary>
+            Represents a planet in our solar system.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.Id">
+            <summary>
+            A unique planet ID in the database.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.Key">
+            <summary>
+            A unique text key that has a 1 to 1 relationship to the planet ID based off the name of
+            the planet.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.Name">
+            <summary>
+            The english name for this planet.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.EquatorialDiameter">
+            <summary>
+            The diameter of the planet at its equator.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.EquatorialBulge">
+            <summary>
+            The equatorial bulge is a difference between the equatorial and polar diameters of a
+            planet, due to the centrifugal force exerted by the rotation about the body's axis.
+            A rotating body tends to form an oblate spheroid rather than a sphere.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.PolarDiameter">
+            <summary>
+            The diameter of a planet measured from pole to pole.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.FlatteningRatio">
+            <summary>
+            The flattening ratio is a measure of how much an oblate spheroid differs from a sphere.
+            The flattening equals the ratio of the semimajor axis minus the semiminor axis to the
+            semimajor axis.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.RotationPeriod">
+            <summary>
+            The rotation period of a celestial object (e.g., star, gas giant, planet, moon,
+            asteroid) is as its sidereal rotation period the time that the object takes to complete
+            a single revolution around its axis of rotation relative to the background stars,
+            measured in sidereal time. This type of rotation period differs from the object's
+            synodic rotation period (a solar day), measured in solar time, which may differ by a
+            fractional or multiple rotation to accommodate the portion of the object's orbital
+            period during one day.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.Density">
+            <summary>
+            The planet density is defined as the ratio of the mass of a planet to the volume of
+            space the planet takes up.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.F">
+            <summary>
+            f = Flattening which is a measure of the compression of a circle or sphere along a
+            diameter to form an ellipse or an ellipsoid of revolution (spheroid) respectively.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Database.PlanetModel.DeviationFromF">
+            <summary>
+            The deviation from Flattenting.
+            </summary>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Data.Enumerator.PlanetSizeEnum">
+            <summary>
+            Basic set of Planet sizes.
+            </summary>
+        </member>
+        <member name="F:OpenPath.Standard.Base.Data.Enumerator.PlanetSizeEnum.Small">
+            <summary>
+            A small planet.
+            </summary>
+        </member>
+        <member name="F:OpenPath.Standard.Base.Data.Enumerator.PlanetSizeEnum.Medium">
+            <summary>
+            A medium sized planet.
+            </summary>
+        </member>
+        <member name="F:OpenPath.Standard.Base.Data.Enumerator.PlanetSizeEnum.Large">
+            <summary>
+            A large panet.
+            </summary>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1">
+            <summary>
+            A structure for returning standardized data packets to a requesting service.
+            </summary>
+            <typeparam name="T">The data type outside the standardized data returned.</typeparam>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Data">
+            <summary>
+            The data model or list returned with or without children depending on the service
+            requested.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.NextPage">
+            <summary>
+            If only a limited set of data was returned and more data exists, the reference of the
+            next set of data will be set here. Otherwise, if there is no more data, this value will
+            be null.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.LastPage">
+            <summary>
+            If the returned data is in a different page than the first page of data, the reference
+            of the last set of data will be set here, if this is the first page, then this valud
+            will be null.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.CurrentPage">
+            <summary>
+            This is the reference to the current page of data.
+            </summary>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco">
+            <summary>
+            Specialized filter adding the ability to filter Planets by Planet Size, Minimum Equatorial
+            Diameter and Maximum Diameter.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.PlanetSize">
+            <summary>
+            Filter for planet size.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.EquatorialDiameterMinimum">
+            <summary>
+            Filter for minimum equatorial diameter.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.EquatorialDiameterMaximum">
+            <summary>
+            Filter for minimum equatorial diameter.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.Clone">
+            <summary>
+            Creates a clone of this filter with the same parameters.
+            </summary>
+            <returns>PlanetFilterPoco</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.Clone(System.Int32)">
+            <summary>
+            Creates a clone of this filter changing the paging parameters to the page number.
+            </summary>
+            <param name="page">The page number to clone too.</param>
+            <returns>PlanetFilterPoco</returns>
+        </member>
+    </members>
+</doc>

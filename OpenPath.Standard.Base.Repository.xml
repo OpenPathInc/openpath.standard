@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenPath.Standard.Base.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:OpenPath.Standard.Base.Repository.Data.PlanetRepository">
+            <inheritdoc />
+            <summary>
+            The class for accessing Planet based data.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Data.PlanetRepository.#ctor(OpenPath.Standard.Base.Repository.StandardDbContext)">
+            <summary>
+            The Planet Repository for accessing Planet data in the database.
+            </summary>
+            <param name="standardDbContext">The database context that contains the Planet data.</param>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Data.PlanetRepository.ListByEquatorialDiameter(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Checks if the Planet name Key already exists in the database.
+            </summary>
+            <param name="key">A Planet Key</param>
+            <returns>Returns True if the Key exist, False if it does not exist.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Data.PlanetRepository.KeyExistsAsync(System.String)">
+            <summary>
+            Looks up a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to look up the Planet by.</param>
+            <returns>Returns a Planet.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Data.PlanetRepository.ReadByKeyAsync(System.String)">
+            <summary>
+            Looks up a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to look up the Planet by.</param>
+            <returns>Returns a Planet.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Data.PlanetRepository.DeleteByKey(System.String)">
+            <summary>
+            Deletes a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to Detele the Planet by.</param>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Data.PlanetRepository.DeleteByKeyAsync(System.String)">
+            <summary>
+            Deletes a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to Detele the Planet by.</param>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Repository.Interface.IPlanet">
+            <summary>
+            The Interface for accessing Planet based data.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IPlanet.ListByEquatorialDiameter(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Lists all planets between a minimum equatorial diameter.
+            </summary>
+            <param name="minimum">The mimimum equatorial diameter of a planed in kilometers.</param>
+            <param name="maximum">The maximum equatorial diameter of a planed in kilometers.</param>
+            <returns>Returns an IQueryable list of Planets.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IPlanet.KeyExistsAsync(System.String)">
+            <summary>
+            Checks if the Planet name Key already exists in the database.
+            </summary>
+            <param name="key">A Planet Key</param>
+            <returns>Returns True if the Key exist, False if it does not exist.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IPlanet.ReadByKeyAsync(System.String)">
+            <summary>
+            Looks up a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to look up the Planet by.</param>
+            <returns>Returns a Planet.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IPlanet.DeleteByKey(System.String)">
+            <summary>
+            Deletes a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to Detele the Planet by.</param>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IPlanet.DeleteByKeyAsync(System.String)">
+            <summary>
+            Deletes a Planet by the Planet Key.
+            </summary>
+            <param name="key">The Planet Key to Detele the Planet by.</param>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Repository.Interface.IStandardDbContext">
+            <summary>
+            The base database connection context Interface for connecting to the database.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Repository.Interface.IStandardDbContext.Planets">
+            <summary>
+            Represents a planet in our solar system.
+            </summary>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork">
+            <summary>
+            The base interface used for all CRUD operations agianst the repository for the the database.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork.DbContext">
+            <summary>
+            Reference to the DB Context underlying the Unit of Work.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork.Planets">
+            <summary>
+            Represents a planet repository in our solar system.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork.Commit">
+            <summary>
+            Commits all database changes to this unit of work.
+            </summary>
+            <returns>The amout of rows updated.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork.CommitAsync">
+            <summary>
+            Commits all database changes to this unit of work.
+            </summary>
+            <returns>The amout of rows updated.</returns>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Repository.StandardDbContext">
+            <summary>
+            The base database connection context for connecting to the database.
+            </summary>
+        </member>
+        <member name="F:OpenPath.Standard.Base.Repository.StandardDbContext._connectionString">
+            <summary>
+            Internal connection string for connecting to the database.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardDbContext.#ctor">
+            <summary>
+            This constructor should only be used when using Entity Framework Code first and is used
+            when creating, updating or modifying database objects. The constructor will use this
+            local libraries project.json file to initalize the database string for connections.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{OpenPath.Standard.Base.Repository.StandardDbContext})">
+            <summary>
+            This contructor can be used by Dependancy Injection when injecting the DBContext
+            Options.
+            </summary>
+            <param name="options">
+            The options to be used by a DbContext. You normally override
+            OnConfiguring(DbContextOptionsBuilder) or use a DbContextOptionsBuilder to create
+            instances of this class and it is not designed to be directly constructed in your
+            application code.
+            </param>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardDbContext.#ctor(System.String)">
+            <summary>
+            This contructor can be used by Dependancy Injection when injecting the database
+            connection string.
+            </summary>
+            <param name="connectionString">The connection string for the database.</param>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            This method is called when the model for a derived context has been initialized, but
+            before the model has been locked down and used to initialize the context. The default
+            implementation of this method does nothing, but it can be overridden in a derived
+            class such that the model can be further configured before it is locked down.
+            </summary>
+            <param name="builder">
+            Defines the shape of your entities, the relationships between them, and how they map to
+            the database.
+            </param>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            This method is called for each instance of the context that is created. The base
+            implementation does nothing.
+            </summary>
+            <param name="optionsBuilder">
+            A builder used to create or modify options for this context. Databases (and other
+            extensions) typically define extension methods on this object that allow you to
+            configure the context.
+            </param>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Repository.StandardDbContext.Planets">
+            <summary>
+            Represents a planet in our solar system.
+            </summary>
+        </member>
+        <member name="T:OpenPath.Standard.Base.Repository.StandardUnitOfWork">
+            <summary>
+            The base class used for all CRUD operations agianst the repository for the the database.
+            </summary>
+        </member>
+        <member name="F:OpenPath.Standard.Base.Repository.StandardUnitOfWork._standardDbContext">
+            <summary>
+            The private context for the Unit of Work.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardUnitOfWork.#ctor(OpenPath.Standard.Base.Repository.StandardDbContext)">
+            <summary>
+            This is constructor should be used by the dependancy inject of the calling project to
+            initalize the Unit of Work for the database.
+            </summary>
+            <param name="standardDbContext">
+            A DbContext instance represents a combination of the Unit Of Work and Repository
+            patterns such that it can be used to query from a database and group together changes
+            that will then be written back to the store as a unit. DbContext is conceptually
+            similar to ObjectContext.
+            </param>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Repository.StandardUnitOfWork.DbContext">
+            <summary>
+            Reference to the DB Context underlying the Unit of Work.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Repository.StandardUnitOfWork.Planets">
+            <summary>
+            Represents a planet repository in our solar system.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardUnitOfWork.Commit">
+            <summary>
+            Commits all database changes to this unit of work.
+            </summary>
+            <returns>The amout of rows updated.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardUnitOfWork.CommitAsync">
+            <summary>
+            Commits all database changes to this unit of work.
+            </summary>
+            <returns>The amout of rows updated.</returns>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardUnitOfWork.Dispose">
+            <summary>
+            Required for memory cleanup and release and reset unmanaged resources, such as file
+            handles and database connections.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Standard.Base.Repository.StandardUnitOfWork.DisposeAsync">
+            <summary>
+            Required for memory cleanup and release and reset unmanaged resources, such as file
+            handles and database connections.
+            </summary>
+        </member>
+    </members>
+</doc>

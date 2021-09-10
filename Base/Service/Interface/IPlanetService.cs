@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace OpenPath.Standard.Base.Service.Interface {
 
+    /// <summary>
+    /// Service to Manage Planets.
+    /// </summary>
     public interface IPlanetService {
 
         /// <summary>

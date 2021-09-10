@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace OpenPath.Standard.Base.Repository.Data {
 
+    /// <inheritdoc />
     /// <summary>
     /// The class for accessing Planet based data.
     /// </summary>

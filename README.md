@@ -24,5 +24,5 @@ This project is an attempt to create the perfect API Template for C#. First note
 
 ### C# Utility Reference
 
-[Model Documentation](OpenPath.Utility.Repository.md)
+[Repository Utility Documentation](OpenPath.Utility.Repository.md)
 

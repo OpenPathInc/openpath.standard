@@ -19,7 +19,7 @@
 - [Startup](#T-OpenPath-Standard-Api-Startup 'OpenPath.Standard.Api.Startup')
   - [#ctor(configuration)](#M-OpenPath-Standard-Api-Startup-#ctor-Microsoft-Extensions-Configuration-IConfiguration- 'OpenPath.Standard.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)')
   - [Configuration](#P-OpenPath-Standard-Api-Startup-Configuration 'OpenPath.Standard.Api.Startup.Configuration')
-  - [Configure(app,env)](#M-OpenPath-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment- 'OpenPath.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)')
+  - [Configure(applicationBuilder,hostEnvironment)](#M-OpenPath-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment- 'OpenPath.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)')
   - [ConfigureServices(services)](#M-OpenPath-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection- 'OpenPath.Standard.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)')
 
 <a name='T-OpenPath-Standard-Api-Controllers-BaseContoller'></a>
@@ -227,7 +227,7 @@ The start up constructor for this class.
 Represents a set of key/value application configuration properties.
 
 <a name='M-OpenPath-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment-'></a>
-### Configure(app,env) `method`
+### Configure(applicationBuilder,hostEnvironment) `method`
 
 ##### Summary
 
@@ -237,8 +237,8 @@ This method gets called by the runtime. Use this method to configure the HTTP re
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| app | [Microsoft.AspNetCore.Builder.IApplicationBuilder](#T-Microsoft-AspNetCore-Builder-IApplicationBuilder 'Microsoft.AspNetCore.Builder.IApplicationBuilder') | Defines a class that provides the mechanisms to configure an application's request pipeline. |
-| env | [Microsoft.AspNetCore.Hosting.IWebHostEnvironment](#T-Microsoft-AspNetCore-Hosting-IWebHostEnvironment 'Microsoft.AspNetCore.Hosting.IWebHostEnvironment') | Provides information about the web hosting environment an application is running in. |
+| applicationBuilder | [Microsoft.AspNetCore.Builder.IApplicationBuilder](#T-Microsoft-AspNetCore-Builder-IApplicationBuilder 'Microsoft.AspNetCore.Builder.IApplicationBuilder') | Defines a class that provides the mechanisms to configure an application's request pipeline. |
+| hostEnvironment | [Microsoft.AspNetCore.Hosting.IWebHostEnvironment](#T-Microsoft-AspNetCore-Hosting-IWebHostEnvironment 'Microsoft.AspNetCore.Hosting.IWebHostEnvironment') | Provides information about the web hosting environment an application is running in. |
 
 <a name='M-OpenPath-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection-'></a>
 ### ConfigureServices(services) `method`

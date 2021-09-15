@@ -7,6 +7,7 @@ using OpenPath.Standard.Base.Data.Database;
 using OpenPath.Standard.Base.Service.Interface;
 using OpenPath.Standard.Base.Data.Poco;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 
 namespace OpenPath.Standard.Api.Controllers {
 
@@ -72,7 +73,19 @@ namespace OpenPath.Standard.Api.Controllers {
         /// </summary>
         /// <param name="planets">An array of Planets.</param>
         /// <returns>Returns an evelope with the updated and/or created planets in the data.</returns>
+        /// <response code="200">Returned if all planets were successfully updated.</response>
+        /// <response code="201">Returned if all planets were successfully created.</response>
+        /// <response code="207">Returned if all planets were successfully updated and created.</response>
+        /// <response code="400">Returned if there was an issue creating or updating 1 or more planets.</response>
+        /// <response code="404">Returned if none of the planet references were found.</response>
         [HttpPost]
+        [Consumes("application/text-json")]
+        [Produces("application/text-json")]
+        [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 200)]
+        [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 201)]
+        [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 207)]
+        [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 400)]
+        [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 404)]
         public async Task<IActionResult> PostAsync([FromBody] IEnumerable<PlanetModel> planets) {
 
             // add and/or update planets
@@ -125,7 +138,7 @@ namespace OpenPath.Standard.Api.Controllers {
             var isNumeric = long.TryParse(idKey, out id);
 
             var planet = isNumeric ? await _planetService.GetAsync(id) : await _planetService.GetAsync(idKey);
-            
+
             var envelope = new EnvelopePoco<PlanetModel>();
 
             envelope.Data = planet;

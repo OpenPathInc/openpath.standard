@@ -77,14 +77,14 @@ namespace OpenPath.Standard.Api {
 
             // configure swagger
             services
-                .AddSwaggerGen(c => {
-                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenPath.Standard.Api", Version = "v1" });
-                    c.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Api.xml");
-                    c.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Data.xml");
-                    c.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Repository.xml");
-                    c.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Service.xml");
-                    c.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Utility.Repository.xml");
-                    c.UseInlineDefinitionsForEnums();
+                .AddSwaggerGen(swagger => {
+                    swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenPath.Standard.Api", Version = "v1" });
+                    swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Api.xml");
+                    swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Data.xml");
+                    swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Repository.xml");
+                    swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Service.xml");
+                    swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Utility.Repository.xml");
+                    swagger.UseInlineDefinitionsForEnums();
                 }).AddSwaggerGenNewtonsoftSupport();
 
         }
@@ -92,35 +92,47 @@ namespace OpenPath.Standard.Api {
         /// <summary>
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// </summary>
-        /// <param name="app">
+        /// <param name="applicationBuilder">
         /// Defines a class that provides the mechanisms to configure an application's request pipeline.
         /// </param>
-        /// <param name="env">
+        /// <param name="hostEnvironment">
         /// Provides information about the web hosting environment an application is running in.
         /// </param>
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+        public void Configure(IApplicationBuilder applicationBuilder, IWebHostEnvironment hostEnvironment) {
 
             // if the application is in development mode set these attributes
-            if (env.IsDevelopment()) {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Standards REST API v1"));
+            if (hostEnvironment.IsDevelopment()) {
+                applicationBuilder.UseDeveloperExceptionPage();
+                applicationBuilder.UseSwagger();
+                applicationBuilder.UseSwaggerUI(
+                    swaggerUi => {
+                        swaggerUi.SwaggerEndpoint("/swagger/v1/swagger.json", "Standard REST API v1");
+                        //swaggerUi.SwaggerEndpoint("/swagger/v1/swagger.json", "Standards REST API v1");
+                    }
+                ); 
             }
+
+
 
             // configure https redirection for http requests
             // TODO: Don't think we need UseHttpsRedirection.
-            app.UseHttpsRedirection();
+            applicationBuilder.UseHttpsRedirection();
 
             // configure controller routing
-            app.UseRouting();
+            applicationBuilder.UseRouting();
 
             // TODO: Don't think we need UseAuthorization.
             //app.UseAuthorization();
 
             // configure end-point routing
-            app.UseEndpoints(endpoints => {
+            applicationBuilder.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });
+
+            // for api documentation references add a reference to pull static files from wwwroot
+            // we will use this for redoc
+            applicationBuilder.UseDefaultFiles();
+            applicationBuilder.UseStaticFiles();
 
         }
 

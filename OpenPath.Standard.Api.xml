@@ -47,6 +47,11 @@
             </summary>
             <param name="planets">An array of Planets.</param>
             <returns>Returns an evelope with the updated and/or created planets in the data.</returns>
+            <response code="200">Returned if all planets were successfully updated.</response>
+            <response code="201">Returned if all planets were successfully created.</response>
+            <response code="207">Returned if all planets were successfully updated and created.</response>
+            <response code="400">Returned if there was an issue creating or updating 1 or more planets.</response>
+            <response code="404">Returned if none of the planet references were found.</response>
         </member>
         <member name="M:OpenPath.Standard.Api.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
             <summary>
@@ -115,10 +120,10 @@
             <summary>
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
-            <param name="app">
+            <param name="applicationBuilder">
             Defines a class that provides the mechanisms to configure an application's request pipeline.
             </param>
-            <param name="env">
+            <param name="hostEnvironment">
             Provides information about the web hosting environment an application is running in.
             </param>
         </member>

@@ -25,7 +25,25 @@ This project is an attempt to create the perfect API Template for C#. First note
 - AUTENTICATION:
 - SECURED:
 
+## Build Process
+
+### Part I - RESTful API with basic functions
+
+Build a basic API using the repository pattern and entity framework code first. Create API's that have a reusable underlying pattern that are easy to reused and add to with basic filtering.
+
+### Part II - Documentation
+
+Add self documentation features based on XML and MD Mark Down, plus giving swagger a pretty UI.
+
+### Part III - Standardization 
+
+Refactor existing code to have standard REST responses using the envelope pattern and standard RESTful response. 
+
+
+
 ## Project Documentation
+
+This documentation below was created by Step II of the Perfect API, when changes are made, the documentation is always updated!
 
 
 

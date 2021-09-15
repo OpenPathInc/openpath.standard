@@ -16,10 +16,14 @@ This project is an attempt to create the perfect API Template for C#. First note
 - EASY DOCUMENTATION: 
 - STANDARDIZATION:
 - EASY VERSIONING:
+- BRANCHING:
+- INTERNATIONAL:
 - ROBUST LOGGING:
 - TESTIABLE UNITS:
 - DECUPLED:
 - REUSABLE:
+- AUTENTICATION:
+- SECURED:
 
 ## Project Documentation
 

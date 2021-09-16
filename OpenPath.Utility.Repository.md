@@ -35,6 +35,8 @@
 - [IFilter](#T-OpenPath-Utility-Repository-Interface-IFilter 'OpenPath.Utility.Repository.Interface.IFilter')
   - [Limit](#P-OpenPath-Utility-Repository-Interface-IFilter-Limit 'OpenPath.Utility.Repository.Interface.IFilter.Limit')
   - [Page](#P-OpenPath-Utility-Repository-Interface-IFilter-Page 'OpenPath.Utility.Repository.Interface.IFilter.Page')
+  - [Clone()](#M-OpenPath-Utility-Repository-Interface-IFilter-Clone 'OpenPath.Utility.Repository.Interface.IFilter.Clone')
+  - [Clone(page)](#M-OpenPath-Utility-Repository-Interface-IFilter-Clone-System-Int32- 'OpenPath.Utility.Repository.Interface.IFilter.Clone(System.Int32)')
 - [IRepository\`2](#T-OpenPath-Utility-Repository-Interface-IRepository`2 'OpenPath.Utility.Repository.Interface.IRepository`2')
   - [Create(entity)](#M-OpenPath-Utility-Repository-Interface-IRepository`2-Create-`0- 'OpenPath.Utility.Repository.Interface.IRepository`2.Create(`0)')
   - [CreateAsync(entity)](#M-OpenPath-Utility-Repository-Interface-IRepository`2-CreateAsync-`0- 'OpenPath.Utility.Repository.Interface.IRepository`2.CreateAsync(`0)')
@@ -472,6 +474,38 @@ The amount or results to return on the filter.
 ##### Summary
 
 The page number to return on the filter.
+
+<a name='M-OpenPath-Utility-Repository-Interface-IFilter-Clone'></a>
+### Clone() `method`
+
+##### Summary
+
+Clones the existing filter in a new memory space.
+
+##### Returns
+
+A new copy of the filter.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-OpenPath-Utility-Repository-Interface-IFilter-Clone-System-Int32-'></a>
+### Clone(page) `method`
+
+##### Summary
+
+Returns a clone +/- the page number of the original filter.
+
+##### Returns
+
+The filter +/- the page number.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| page | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The amount you want to up or down the filter page. |
 
 <a name='T-OpenPath-Utility-Repository-Interface-IRepository`2'></a>
 ## IRepository\`2 `type`

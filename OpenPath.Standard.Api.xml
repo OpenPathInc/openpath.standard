@@ -4,43 +4,44 @@
         <name>OpenPath.Standard.Api</name>
     </assembly>
     <members>
-        <member name="T:OpenPath.Standard.Api.Controllers.BaseContoller">
+        <member name="T:OpenPath.Standard.Api.V1.Controllers.BaseContoller">
             <summary>
             Base controller for API endpoints.
             </summary>
         </member>
-        <member name="T:OpenPath.Standard.Api.Controllers.PlanetsController">
-            <summary>
-            Endpoints for managing Planet data.
-            </summary>
-        </member>
-        <member name="F:OpenPath.Standard.Api.Controllers.PlanetsController._loggerFactory">
+        <member name="P:OpenPath.Standard.Api.V1.Controllers.BaseContoller.LoggerFactory">
             <summary>
             Represents a type used to configure the logging system and create instances of
             Microsoft.Extensions.Logging.ILogger from the registered
             Microsoft.Extensions.Logging.ILoggerProviders.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Api.Controllers.PlanetsController._logger">
+        <member name="P:OpenPath.Standard.Api.V1.Controllers.BaseContoller.Logger">
             <summary>
             A generic interface for logging where the category name is derived from the specified
             TCategoryName type name. Generally used to enable activation of a named
             Microsoft.Extensions.Logging.ILogger from dependency injection.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Api.Controllers.PlanetsController._planetService">
+        <member name="M:OpenPath.Standard.Api.V1.Controllers.BaseContoller.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
             <summary>
-            Service to Manage Planets.
+            The Base endpoint constructor.
+            </summary>
+            <param name="loggerFactory">The Microsoft Logger Factory.</param>
+        </member>
+        <member name="T:OpenPath.Standard.Api.V1.Controllers.PlanetsController">
+            <summary>
+            Endpoints for managing Planet data.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Api.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,OpenPath.Standard.Base.Service.Interface.IPlanetService)">
+        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,OpenPath.Standard.Base.Service.Interface.IPlanetService)">
             <summary>
             The Planets endpoint constructor.
             </summary>
             <param name="loggerFactory">The Microsoft Logger Factory.</param>
             <param name="planetService">Service to Manage Planets.</param>
         </member>
-        <member name="M:OpenPath.Standard.Api.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})">
+        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})">
             <summary>
             Accepts an array of new or updated planets and either creates or updates them. This
             endpoint can handle a mixture of both.
@@ -50,24 +51,25 @@
             <response code="200">Returned if all planets were successfully updated.</response>
             <response code="201">Returned if all planets were successfully created.</response>
             <response code="207">Returned if all planets were successfully updated and created.</response>
-            <response code="400">Returned if there was an issue creating or updating 1 or more planets.</response>
             <response code="404">Returned if none of the planet references were found.</response>
+            <response code="406">Returned if there was an issue creating or updating 1 or more planets.</response>
+            <response code="500">Returned if there is an error within the API.</response>
         </member>
-        <member name="M:OpenPath.Standard.Api.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
+        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
             <summary>
             Gets a filtered array of Planets.
             </summary>
             <param name="filter">Filter Parameters</param>
             <returns>Returns an evelope with filtered planets in the data.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Api.Controllers.PlanetsController.Get(System.String)">
+        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(System.String)">
             <summary>
             Returns a single Planet by Planet ID or Planet Key.
             </summary>
             <param name="idKey">The Planet ID or Key.</param>
             <returns>A an Envelope with Planet data.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Api.Controllers.PlanetsController.DeleteAsync(System.String)">
+        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.DeleteAsync(System.String)">
             <summary>
             Deletes a single Planet by Planet ID or Planet Key.
             </summary>

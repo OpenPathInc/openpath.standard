@@ -78,7 +78,7 @@ namespace OpenPath.Standard.Api {
             // configure swagger
             services
                 .AddSwaggerGen(swagger => {
-                    swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenPath.Standard.Api", Version = "v1" });
+                    swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "Standard API Template", Version = "v1" });
                     swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Api.xml");
                     swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Data.xml");
                     swagger.IncludeXmlComments($"{Directory.GetParent(Environment.CurrentDirectory).FullName}/OpenPath.Standard.Base.Repository.xml");

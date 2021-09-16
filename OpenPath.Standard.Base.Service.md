@@ -19,7 +19,7 @@
   - [SMALL_PLANET_MAXIMUM](#F-OpenPath-Standard-Base-Service-PlanetService-SMALL_PLANET_MAXIMUM 'OpenPath.Standard.Base.Service.PlanetService.SMALL_PLANET_MAXIMUM')
   - [_standardUnitOfWork](#F-OpenPath-Standard-Base-Service-PlanetService-_standardUnitOfWork 'OpenPath.Standard.Base.Service.PlanetService._standardUnitOfWork')
   - [AddUpdateAsync(planet)](#M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-OpenPath-Standard-Base-Data-Database-PlanetModel- 'OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(OpenPath.Standard.Base.Data.Database.PlanetModel)')
-  - [AddUpdateAsync(planet)](#M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
+  - [AddUpdateAsync(planets)](#M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
   - [GetAsync(id)](#M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-Int64- 'OpenPath.Standard.Base.Service.PlanetService.GetAsync(System.Int64)')
   - [GetAsync(id)](#M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-String- 'OpenPath.Standard.Base.Service.PlanetService.GetAsync(System.String)')
   - [ListAsync(filter)](#M-OpenPath-Standard-Base-Service-PlanetService-ListAsync-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco- 'OpenPath.Standard.Base.Service.PlanetService.ListAsync(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)')
@@ -223,7 +223,7 @@ Planet.
 | planet | [OpenPath.Standard.Base.Data.Database.PlanetModel](#T-OpenPath-Standard-Base-Data-Database-PlanetModel 'OpenPath.Standard.Base.Data.Database.PlanetModel') | The Planet to Add or Update. |
 
 <a name='M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}-'></a>
-### AddUpdateAsync(planet) `method`
+### AddUpdateAsync(planets) `method`
 
 ##### Summary
 
@@ -237,7 +237,7 @@ then it will add the Planet.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| planet | [System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}') | The Planet to Add or Update. |
+| planets | [System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}') | The Planets to Add or Update. |
 
 <a name='M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-Int64-'></a>
 ### GetAsync(id) `method`

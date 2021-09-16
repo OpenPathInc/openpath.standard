@@ -181,6 +181,19 @@
             The amount or results to return on the filter.
             </summary>
         </member>
+        <member name="M:OpenPath.Utility.Repository.Interface.IFilter.Clone">
+            <summary>
+            Clones the existing filter in a new memory space.
+            </summary>
+            <returns>A new copy of the filter.</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Repository.Interface.IFilter.Clone(System.Int32)">
+            <summary>
+            Returns a clone +/- the page number of the original filter.
+            </summary>
+            <param name="page">The amount you want to up or down the filter page.</param>
+            <returns>The filter +/- the page number.</returns>
+        </member>
         <member name="T:OpenPath.Utility.Repository.Interface.IRepository`2">
             <summary>
             A generic repositiory pattern for apply basic C.R.U.D. (Create, Read, Update and Delete)

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OpenPath.Utility.Repository.Interface;
 using System;
 
 namespace OpenPath.Standard.Base.Data.Poco {
@@ -13,11 +14,41 @@ namespace OpenPath.Standard.Base.Data.Poco {
         // ====================================================================================================
 
         /// <summary>
+        /// The name of the company supporting this API.
+        /// </summary>
+        [JsonProperty("company")]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// The name of this API.
+        /// </summary>
+        [JsonProperty("api_name")]
+        public string ApiName { get; set; }
+
+        /// <summary>
+        /// The copyright of this API.
+        /// </summary>
+        [JsonProperty("copyright")]
+        public string Copyright { get; set; }
+
+        /// <summary>
+        /// The version of this API.
+        /// </summary>
+        [JsonProperty("version")]
+        public string Version { get; set; }
+
+        /// <summary>
         /// The data model or list returned with or without children depending on the service
         /// requested.
         /// </summary>
         [JsonProperty("data")]
         public T Data { get; set; }
+
+        /// <summary>
+        /// Filter applied to REST query.
+        /// </summary>
+        [JsonProperty("filter")]
+        public IFilter Filter { get; set; }
 
         /// <summary>
         /// If only a limited set of data was returned and more data exists, the reference of the
@@ -40,6 +71,18 @@ namespace OpenPath.Standard.Base.Data.Poco {
         /// </summary>
         [JsonProperty("current_page")]
         public Uri CurrentPage { get; set; }
+
+        /// <summary>
+        /// Records the response Timestamp of this envelope in UTC.
+        /// </summary>
+        [JsonProperty("utc_timestamp")]
+        public DateTime UtcTimestamp { get; set; }
+
+        /// <summary>
+        /// Returns the response from this request, including errors if any.
+        /// </summary>
+        [JsonProperty("response")]
+        public EnvelopeResponsePaco Response { get; set; }
 
     }
 

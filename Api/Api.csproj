@@ -4,6 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>OpenPath.Standard.Api</AssemblyName>
     <RootNamespace>OpenPath.Standard.Api</RootNamespace>
+    <Authors>Jason Martin</Authors>
+    <Company>OpenPath, Inc.</Company>
+    <Product>The Perfect API Template</Product>
+    <Copyright>2021</Copyright>
+    <PackageProjectUrl>https://github.com/OpenPathInc/openpath.standard</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/OpenPathInc/openpath.standard</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>API, REST, RESTful, Graph QL, Template</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

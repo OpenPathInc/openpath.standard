@@ -103,10 +103,35 @@
             </summary>
             <typeparam name="T">The data type outside the standardized data returned.</typeparam>
         </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Company">
+            <summary>
+            The name of the company supporting this API.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.ApiName">
+            <summary>
+            The name of this API.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Copyright">
+            <summary>
+            The copyright of this API.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Version">
+            <summary>
+            The version of this API.
+            </summary>
+        </member>
         <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Data">
             <summary>
             The data model or list returned with or without children depending on the service
             requested.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Filter">
+            <summary>
+            Filter applied to REST query.
             </summary>
         </member>
         <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.NextPage">
@@ -126,6 +151,16 @@
         <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.CurrentPage">
             <summary>
             This is the reference to the current page of data.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.UtcTimestamp">
+            <summary>
+            Records the response Timestamp of this envelope in UTC.
+            </summary>
+        </member>
+        <member name="P:OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Response">
+            <summary>
+            Returns the response from this request, including errors if any.
             </summary>
         </member>
         <member name="T:OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco">

@@ -4,10 +4,17 @@
 ## Contents
 
 - [EnvelopePoco\`1](#T-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1')
+  - [ApiName](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-ApiName 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.ApiName')
+  - [Company](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Company 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Company')
+  - [Copyright](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Copyright 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Copyright')
   - [CurrentPage](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-CurrentPage 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.CurrentPage')
   - [Data](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Data 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Data')
+  - [Filter](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Filter 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Filter')
   - [LastPage](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-LastPage 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.LastPage')
   - [NextPage](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-NextPage 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.NextPage')
+  - [Response](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Response 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Response')
+  - [UtcTimestamp](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-UtcTimestamp 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.UtcTimestamp')
+  - [Version](#P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Version 'OpenPath.Standard.Base.Data.Poco.EnvelopePoco`1.Version')
 - [PlanetFilterPoco](#T-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco')
   - [EquatorialDiameterMaximum](#P-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-EquatorialDiameterMaximum 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.EquatorialDiameterMaximum')
   - [EquatorialDiameterMinimum](#P-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-EquatorialDiameterMinimum 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco.EquatorialDiameterMinimum')
@@ -48,6 +55,27 @@ A structure for returning standardized data packets to a requesting service.
 | ---- | ----------- |
 | T | The data type outside the standardized data returned. |
 
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-ApiName'></a>
+### ApiName `property`
+
+##### Summary
+
+The name of this API.
+
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Company'></a>
+### Company `property`
+
+##### Summary
+
+The name of the company supporting this API.
+
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Copyright'></a>
+### Copyright `property`
+
+##### Summary
+
+The copyright of this API.
+
 <a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-CurrentPage'></a>
 ### CurrentPage `property`
 
@@ -62,6 +90,13 @@ This is the reference to the current page of data.
 
 The data model or list returned with or without children depending on the service
 requested.
+
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Filter'></a>
+### Filter `property`
+
+##### Summary
+
+Filter applied to REST query.
 
 <a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-LastPage'></a>
 ### LastPage `property`
@@ -80,6 +115,27 @@ will be null.
 If only a limited set of data was returned and more data exists, the reference of the
 next set of data will be set here. Otherwise, if there is no more data, this value will
 be null.
+
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Response'></a>
+### Response `property`
+
+##### Summary
+
+Returns the response from this request, including errors if any.
+
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-UtcTimestamp'></a>
+### UtcTimestamp `property`
+
+##### Summary
+
+Records the response Timestamp of this envelope in UTC.
+
+<a name='P-OpenPath-Standard-Base-Data-Poco-EnvelopePoco`1-Version'></a>
+### Version `property`
+
+##### Summary
+
+The version of this API.
 
 <a name='T-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco'></a>
 ## PlanetFilterPoco `type`

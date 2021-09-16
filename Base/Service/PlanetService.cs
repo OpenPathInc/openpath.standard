@@ -78,39 +78,46 @@ namespace OpenPath.Standard.Base.Service {
         /// Planet.
         /// </summary>
         /// <param name="planet">The Planet to Add or Update.</param>
-        public async Task AddUpdateAsync(PlanetModel planet) {
+        public async Task<ServiceResponsePaco> AddUpdateAsync(PlanetModel planet) {
 
             // validate request
             if (planet == null) throw new System.ArgumentNullException("Planet", "Planet object cannot be null");
 
-            // determine if this is an update or add
-            var add = planet.Id <= 0;
+            // create list to pass to the other method
+            var planetList = new List<PlanetModel>() { planet };
 
-            // reguardless of update or add, make sure the key is correct
-            planet.Key = await generateKeyAsync(planet.Name, planet.Id <= 0);
+            //planetList.Add(planet);
 
-            // if this is an add then add
-            if (add) {
+            return await AddUpdateAsync(planetList);
 
-                // create a new planet
-                await _standardUnitOfWork.Planets.CreateAsync(planet);
+            //// determine if this is an update or add
+            //var add = planet.Id <= 0;
 
-            }
-            // if this is an update then look up and update
-            else {
+            //// reguardless of update or add, make sure the key is correct
+            //planet.Key = await generateKeyAsync(planet.Name, planet.Id <= 0);
 
-                // look up the existing planet
-                var currentPlanet = await _standardUnitOfWork.Planets.ReadByIdAsync(planet.Id);
+            //// if this is an add then add
+            //if (add) {
 
-                // check the looked up and existing planets and update only if any of the values
-                // have changed
-                updateChanged(currentPlanet, planet);
+            //    // create a new planet
+            //    await _standardUnitOfWork.Planets.CreateAsync(planet);
 
-            }
+            //}
+            //// if this is an update then look up and update
+            //else {
 
-            // commit if any changes to the database and record the amount of rows updated as a
-            // sanity check
-            var rowsUpdated = await _standardUnitOfWork.CommitAsync();
+            //    // look up the existing planet
+            //    var currentPlanet = await _standardUnitOfWork.Planets.ReadByIdAsync(planet.Id);
+
+            //    // check the looked up and existing planets and update only if any of the values
+            //    // have changed
+            //    updateChanged(currentPlanet, planet);
+
+            //}
+
+            //// commit if any changes to the database and record the amount of rows updated as a
+            //// sanity check
+            //var rowsUpdated = await _standardUnitOfWork.CommitAsync();
 
         }
 
@@ -121,8 +128,11 @@ namespace OpenPath.Standard.Base.Service {
         /// lookup and update the exist Planet, if the Planet ID is less than or equal to zero (0),
         /// then it will add the Planet.
         /// </summary>
-        /// <param name="planet">The Planet to Add or Update.</param>
-        public async Task AddUpdateAsync(IEnumerable<PlanetModel> planets) {
+        /// <param name="planets">The Planets to Add or Update.</param>
+        public async Task<ServiceResponsePaco> AddUpdateAsync(IEnumerable<PlanetModel> planets) {
+
+            // create the service response
+            var serviceResponse = new ServiceResponsePaco();
 
             // update the planet key for every planet reguardless of add or update
             foreach (var planet in planets) {
@@ -142,7 +152,7 @@ namespace OpenPath.Standard.Base.Service {
             if (addPlanets != null && addPlanets.Count() > 0) {
 
                 // add the planets
-                await _standardUnitOfWork.Planets.CreateRangeAsync(planets);
+                await _standardUnitOfWork.Planets.CreateRangeAsync(addPlanets);
 
             }
 
@@ -162,9 +172,15 @@ namespace OpenPath.Standard.Base.Service {
 
             }
 
-            // commit if any changes to the database and record the amount of rows updated as a
-            // sanity check
-            var rowsUpdated = await _standardUnitOfWork.CommitAsync();
+            // record the number of records updated on the commit
+            serviceResponse.RecordsUpdated = await _standardUnitOfWork.CommitAsync();
+
+            // update the additional details of the serviceResponse
+            serviceResponse.CreatedIds = (addPlanets != null && addPlanets.Count() > 0) ? addPlanets.Select(_ => _.Id) : null;
+            serviceResponse.UpdatedIds = (updatePlanets != null && updatePlanets.Count() > 0) ? updatePlanets.Select(_ => _.Id) : null;
+
+            // return the service response
+            return serviceResponse;
 
         }
 

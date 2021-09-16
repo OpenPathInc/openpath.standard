@@ -17,7 +17,7 @@ namespace OpenPath.Standard.Base.Service.Interface {
         /// Planet.
         /// </summary>
         /// <param name="planet">The Planet to Add or Update.</param>
-        Task AddUpdateAsync(PlanetModel planet);
+        Task<ServiceResponsePaco> AddUpdateAsync(PlanetModel planet);
 
         /// <summary>
         /// This method will add or update an array of Planets passed to it. The Planets will be
@@ -27,7 +27,7 @@ namespace OpenPath.Standard.Base.Service.Interface {
         /// then it will add the Planet.
         /// </summary>
         /// <param name="planet">The Planet to Add or Update.</param>
-        Task AddUpdateAsync(IEnumerable<PlanetModel> planets);
+        Task<ServiceResponsePaco> AddUpdateAsync(IEnumerable<PlanetModel> planets);
 
         /// <summary>
         /// Returns a paged list of Planets based on the filter and the maximum amount of items

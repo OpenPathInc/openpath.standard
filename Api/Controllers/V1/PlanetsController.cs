@@ -8,39 +8,20 @@ using OpenPath.Standard.Base.Service.Interface;
 using OpenPath.Standard.Base.Data.Poco;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
+using OpenPath.Utility.Repository.Poco;
 
-namespace OpenPath.Standard.Api.Controllers {
+namespace OpenPath.Standard.Api.V1.Controllers {
 
     /// <summary>
     /// Endpoints for managing Planet data.
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("v1/[controller]")]
     public class PlanetsController : BaseContoller {
 
         // MEMBERS
         // ====================================================================================================
-
-        /// <summary>
-        /// Represents a type used to configure the logging system and create instances of
-        /// Microsoft.Extensions.Logging.ILogger from the registered
-        /// Microsoft.Extensions.Logging.ILoggerProviders.
-        /// </summary>
-        private readonly ILoggerFactory _loggerFactory;
-
-        /// <summary>
-        /// A generic interface for logging where the category name is derived from the specified
-        /// TCategoryName type name. Generally used to enable activation of a named
-        /// Microsoft.Extensions.Logging.ILogger from dependency injection.
-        /// </summary>
-        private readonly ILogger<PlanetsController> _logger;
-
-        /// <summary>
-        /// Service to Manage Planets.
-        /// </summary>
         private readonly IPlanetService _planetService;
-
-
 
         // CONSTRUCTORS
         // ====================================================================================================
@@ -50,14 +31,11 @@ namespace OpenPath.Standard.Api.Controllers {
         /// </summary>
         /// <param name="loggerFactory">The Microsoft Logger Factory.</param>
         /// <param name="planetService">Service to Manage Planets.</param>
-        public PlanetsController(
+        public PlanetsController (
             ILoggerFactory loggerFactory,
             IPlanetService planetService
-        ) {
+        ) : base(loggerFactory) {
 
-            // associate the injected services
-            _loggerFactory = loggerFactory;
-            _logger = loggerFactory.CreateLogger<PlanetsController>();
             _planetService = planetService;
 
         }
@@ -76,29 +54,33 @@ namespace OpenPath.Standard.Api.Controllers {
         /// <response code="200">Returned if all planets were successfully updated.</response>
         /// <response code="201">Returned if all planets were successfully created.</response>
         /// <response code="207">Returned if all planets were successfully updated and created.</response>
-        /// <response code="400">Returned if there was an issue creating or updating 1 or more planets.</response>
         /// <response code="404">Returned if none of the planet references were found.</response>
+        /// <response code="406">Returned if there was an issue creating or updating 1 or more planets.</response>
+        /// <response code="500">Returned if there is an error within the API.</response>
         [HttpPost]
-        [Consumes("application/text-json")]
-        [Produces("application/text-json")]
         [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 200)]
         [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 201)]
         [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 207)]
         [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 400)]
         [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 404)]
+        [ProducesResponseType(typeof(EnvelopePoco<IEnumerable<PlanetModel>>), 500)]
         public async Task<IActionResult> PostAsync([FromBody] IEnumerable<PlanetModel> planets) {
 
-            // add and/or update planets
-            await _planetService.AddUpdateAsync(planets);
+            try {
 
-            // create the envelope
-            var envelope = new EnvelopePoco<IEnumerable<PlanetModel>>();
+                // add and/or update planets
+                var response = await _planetService.AddUpdateAsync(planets);
 
-            // update the envelope data
-            envelope.Data = planets;
+                // return the envelope
+                return await Envelope(planets, response);
 
-            // return the envelope
-            return Ok(envelope);
+            }
+            catch(Exception ex) {
+
+                return await Envelope(planets, null, new List<string> { ex.Message });
+
+            }
+            
 
         }
 
@@ -112,17 +94,8 @@ namespace OpenPath.Standard.Api.Controllers {
 
             var filteredPlanets = await _planetService.ListAsync(filter);
 
-            var envelope = new EnvelopePoco<IEnumerable<PlanetModel>>();
-            var nextFilter = filter.Clone(1) as PlanetFilterPoco;
-            var previousFilter = filter.Clone(-1) as PlanetFilterPoco;
-            var nextUrl = (await _planetService.ListAsync(nextFilter)).Count() <= 0 ? null : this.Url.Action("Get", null, nextFilter, Request.Scheme);
-            var previousUrl = previousFilter.Page <= 0 ? null : this.Url.Action("Get", null, previousFilter, Request.Scheme);
-
-            envelope.Data = filteredPlanets;
-            envelope.NextPage = !String.IsNullOrWhiteSpace(nextUrl) ? new Uri(nextUrl) : null;
-            envelope.LastPage = !String.IsNullOrWhiteSpace(previousUrl) ? new Uri(previousUrl) : null;
-
-            return Ok(envelope);
+            // return the envelope
+            return await Envelope<IEnumerable<PlanetModel>, PlanetFilterPoco>(filteredPlanets, filter, null);
 
         }
 

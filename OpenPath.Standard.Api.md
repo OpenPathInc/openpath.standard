@@ -3,16 +3,16 @@
 
 ## Contents
 
-- [BaseContoller](#T-OpenPath-Standard-Api-Controllers-BaseContoller 'OpenPath.Standard.Api.Controllers.BaseContoller')
-- [PlanetsController](#T-OpenPath-Standard-Api-Controllers-PlanetsController 'OpenPath.Standard.Api.Controllers.PlanetsController')
-  - [#ctor(loggerFactory,planetService)](#M-OpenPath-Standard-Api-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,OpenPath-Standard-Base-Service-Interface-IPlanetService- 'OpenPath.Standard.Api.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,OpenPath.Standard.Base.Service.Interface.IPlanetService)')
-  - [_logger](#F-OpenPath-Standard-Api-Controllers-PlanetsController-_logger 'OpenPath.Standard.Api.Controllers.PlanetsController._logger')
-  - [_loggerFactory](#F-OpenPath-Standard-Api-Controllers-PlanetsController-_loggerFactory 'OpenPath.Standard.Api.Controllers.PlanetsController._loggerFactory')
-  - [_planetService](#F-OpenPath-Standard-Api-Controllers-PlanetsController-_planetService 'OpenPath.Standard.Api.Controllers.PlanetsController._planetService')
-  - [DeleteAsync(idKey)](#M-OpenPath-Standard-Api-Controllers-PlanetsController-DeleteAsync-System-String- 'OpenPath.Standard.Api.Controllers.PlanetsController.DeleteAsync(System.String)')
-  - [Get(filter)](#M-OpenPath-Standard-Api-Controllers-PlanetsController-Get-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco- 'OpenPath.Standard.Api.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)')
-  - [Get(idKey)](#M-OpenPath-Standard-Api-Controllers-PlanetsController-Get-System-String- 'OpenPath.Standard.Api.Controllers.PlanetsController.Get(System.String)')
-  - [PostAsync(planets)](#M-OpenPath-Standard-Api-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Api.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
+- [BaseContoller](#T-OpenPath-Standard-Api-V1-Controllers-BaseContoller 'OpenPath.Standard.Api.V1.Controllers.BaseContoller')
+  - [#ctor(loggerFactory)](#M-OpenPath-Standard-Api-V1-Controllers-BaseContoller-#ctor-Microsoft-Extensions-Logging-ILoggerFactory- 'OpenPath.Standard.Api.V1.Controllers.BaseContoller.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)')
+  - [Logger](#P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-Logger 'OpenPath.Standard.Api.V1.Controllers.BaseContoller.Logger')
+  - [LoggerFactory](#P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-LoggerFactory 'OpenPath.Standard.Api.V1.Controllers.BaseContoller.LoggerFactory')
+- [PlanetsController](#T-OpenPath-Standard-Api-V1-Controllers-PlanetsController 'OpenPath.Standard.Api.V1.Controllers.PlanetsController')
+  - [#ctor(loggerFactory,planetService)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,OpenPath-Standard-Base-Service-Interface-IPlanetService- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,OpenPath.Standard.Base.Service.Interface.IPlanetService)')
+  - [DeleteAsync(idKey)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-DeleteAsync-System-String- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.DeleteAsync(System.String)')
+  - [Get(filter)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)')
+  - [Get(idKey)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-System-String- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(System.String)')
+  - [PostAsync(planets)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
 - [Program](#T-OpenPath-Standard-Api-Program 'OpenPath.Standard.Api.Program')
   - [CreateHostBuilder(args)](#M-OpenPath-Standard-Api-Program-CreateHostBuilder-System-String[]- 'OpenPath.Standard.Api.Program.CreateHostBuilder(System.String[])')
   - [Main(args)](#M-OpenPath-Standard-Api-Program-Main-System-String[]- 'OpenPath.Standard.Api.Program.Main(System.String[])')
@@ -22,29 +22,60 @@
   - [Configure(applicationBuilder,hostEnvironment)](#M-OpenPath-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment- 'OpenPath.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)')
   - [ConfigureServices(services)](#M-OpenPath-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection- 'OpenPath.Standard.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)')
 
-<a name='T-OpenPath-Standard-Api-Controllers-BaseContoller'></a>
+<a name='T-OpenPath-Standard-Api-V1-Controllers-BaseContoller'></a>
 ## BaseContoller `type`
 
 ##### Namespace
 
-OpenPath.Standard.Api.Controllers
+OpenPath.Standard.Api.V1.Controllers
 
 ##### Summary
 
 Base controller for API endpoints.
 
-<a name='T-OpenPath-Standard-Api-Controllers-PlanetsController'></a>
+<a name='M-OpenPath-Standard-Api-V1-Controllers-BaseContoller-#ctor-Microsoft-Extensions-Logging-ILoggerFactory-'></a>
+### #ctor(loggerFactory) `constructor`
+
+##### Summary
+
+The Base endpoint constructor.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| loggerFactory | [Microsoft.Extensions.Logging.ILoggerFactory](#T-Microsoft-Extensions-Logging-ILoggerFactory 'Microsoft.Extensions.Logging.ILoggerFactory') | The Microsoft Logger Factory. |
+
+<a name='P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-Logger'></a>
+### Logger `property`
+
+##### Summary
+
+A generic interface for logging where the category name is derived from the specified
+TCategoryName type name. Generally used to enable activation of a named
+Microsoft.Extensions.Logging.ILogger from dependency injection.
+
+<a name='P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-LoggerFactory'></a>
+### LoggerFactory `property`
+
+##### Summary
+
+Represents a type used to configure the logging system and create instances of
+Microsoft.Extensions.Logging.ILogger from the registered
+Microsoft.Extensions.Logging.ILoggerProviders.
+
+<a name='T-OpenPath-Standard-Api-V1-Controllers-PlanetsController'></a>
 ## PlanetsController `type`
 
 ##### Namespace
 
-OpenPath.Standard.Api.Controllers
+OpenPath.Standard.Api.V1.Controllers
 
 ##### Summary
 
 Endpoints for managing Planet data.
 
-<a name='M-OpenPath-Standard-Api-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,OpenPath-Standard-Base-Service-Interface-IPlanetService-'></a>
+<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,OpenPath-Standard-Base-Service-Interface-IPlanetService-'></a>
 ### #ctor(loggerFactory,planetService) `constructor`
 
 ##### Summary
@@ -58,32 +89,7 @@ The Planets endpoint constructor.
 | loggerFactory | [Microsoft.Extensions.Logging.ILoggerFactory](#T-Microsoft-Extensions-Logging-ILoggerFactory 'Microsoft.Extensions.Logging.ILoggerFactory') | The Microsoft Logger Factory. |
 | planetService | [OpenPath.Standard.Base.Service.Interface.IPlanetService](#T-OpenPath-Standard-Base-Service-Interface-IPlanetService 'OpenPath.Standard.Base.Service.Interface.IPlanetService') | Service to Manage Planets. |
 
-<a name='F-OpenPath-Standard-Api-Controllers-PlanetsController-_logger'></a>
-### _logger `constants`
-
-##### Summary
-
-A generic interface for logging where the category name is derived from the specified
-TCategoryName type name. Generally used to enable activation of a named
-Microsoft.Extensions.Logging.ILogger from dependency injection.
-
-<a name='F-OpenPath-Standard-Api-Controllers-PlanetsController-_loggerFactory'></a>
-### _loggerFactory `constants`
-
-##### Summary
-
-Represents a type used to configure the logging system and create instances of
-Microsoft.Extensions.Logging.ILogger from the registered
-Microsoft.Extensions.Logging.ILoggerProviders.
-
-<a name='F-OpenPath-Standard-Api-Controllers-PlanetsController-_planetService'></a>
-### _planetService `constants`
-
-##### Summary
-
-Service to Manage Planets.
-
-<a name='M-OpenPath-Standard-Api-Controllers-PlanetsController-DeleteAsync-System-String-'></a>
+<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-DeleteAsync-System-String-'></a>
 ### DeleteAsync(idKey) `method`
 
 ##### Summary
@@ -100,7 +106,7 @@ If the delete was successfull.
 | ---- | ---- | ----------- |
 | idKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Planet ID or Key. |
 
-<a name='M-OpenPath-Standard-Api-Controllers-PlanetsController-Get-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
+<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
 ### Get(filter) `method`
 
 ##### Summary
@@ -117,7 +123,7 @@ Returns an evelope with filtered planets in the data.
 | ---- | ---- | ----------- |
 | filter | [OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco](#T-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco') | Filter Parameters |
 
-<a name='M-OpenPath-Standard-Api-Controllers-PlanetsController-Get-System-String-'></a>
+<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-System-String-'></a>
 ### Get(idKey) `method`
 
 ##### Summary
@@ -134,7 +140,7 @@ A an Envelope with Planet data.
 | ---- | ---- | ----------- |
 | idKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Planet ID or Key. |
 
-<a name='M-OpenPath-Standard-Api-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}-'></a>
+<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}-'></a>
 ### PostAsync(planets) `method`
 
 ##### Summary

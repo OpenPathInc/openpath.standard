@@ -115,7 +115,7 @@
             lookup and update the exist Planet, if the Planet ID is less than or equal to zero (0),
             then it will add the Planet.
             </summary>
-            <param name="planet">The Planet to Add or Update.</param>
+            <param name="planets">The Planets to Add or Update.</param>
         </member>
         <member name="M:OpenPath.Standard.Base.Service.PlanetService.ListAsync(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
             <summary>

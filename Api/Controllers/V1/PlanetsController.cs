@@ -3,14 +3,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OpenPath.Standard.Base.Data.Database;
-using OpenPath.Standard.Base.Service.Interface;
-using OpenPath.Standard.Base.Data.Poco;
+using WebApi.Software.Standard.Base.Data.Database;
+using WebApi.Software.Standard.Base.Service.Interface;
+using WebApi.Software.Standard.Base.Data.Poco;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
-using OpenPath.Utility.Repository.Poco;
+using WebApi.Software.Utility.Repository.Poco;
 
-namespace OpenPath.Standard.Api.V1.Controllers {
+namespace WebApi.Software.Standard.Api.V1.Controllers {
 
     /// <summary>
     /// Endpoints for managing Planet data.

@@ -1,9 +1,9 @@
-﻿using OpenPath.Standard.Base.Data.Database;
-using OpenPath.Standard.Base.Data.Poco;
+﻿using WebApi.Software.Standard.Base.Data.Database;
+using WebApi.Software.Standard.Base.Data.Poco;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Service.Interface {
+namespace WebApi.Software.Standard.Base.Service.Interface {
 
     /// <summary>
     /// Service to Manage Planets.

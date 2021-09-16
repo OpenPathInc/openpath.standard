@@ -1,45 +1,45 @@
 <a name='assembly'></a>
-# OpenPath.Standard.Base.Service
+# WebApiSoftware-Standard-Service
 
 ## Contents
 
-- [IPlanetService](#T-OpenPath-Standard-Base-Service-Interface-IPlanetService 'OpenPath.Standard.Base.Service.Interface.IPlanetService')
-  - [AddUpdateAsync(planet)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-OpenPath-Standard-Base-Data-Database-PlanetModel- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(OpenPath.Standard.Base.Data.Database.PlanetModel)')
-  - [AddUpdateAsync(planet)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
-  - [GetAsync(id)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-Int64- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.Int64)')
-  - [GetAsync(id)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-String- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.String)')
-  - [ListAsync(filter)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-ListAsync-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.ListAsync(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)')
-  - [RemoveAsync(id)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-Int64- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.Int64)')
-  - [RemoveAsync(id)](#M-OpenPath-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-String- 'OpenPath.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.String)')
-- [PlanetService](#T-OpenPath-Standard-Base-Service-PlanetService 'OpenPath.Standard.Base.Service.PlanetService')
-  - [#ctor(standardUnitOfWork)](#M-OpenPath-Standard-Base-Service-PlanetService-#ctor-OpenPath-Standard-Base-Repository-Interface-IStandardUnitOfWork- 'OpenPath.Standard.Base.Service.PlanetService.#ctor(OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork)')
-  - [LARGE_PLANET_MINIMUM](#F-OpenPath-Standard-Base-Service-PlanetService-LARGE_PLANET_MINIMUM 'OpenPath.Standard.Base.Service.PlanetService.LARGE_PLANET_MINIMUM')
-  - [MEDIUM_PLANET_MAXIMUM](#F-OpenPath-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MAXIMUM 'OpenPath.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MAXIMUM')
-  - [MEDIUM_PLANET_MINIMUM](#F-OpenPath-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MINIMUM 'OpenPath.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MINIMUM')
-  - [SMALL_PLANET_MAXIMUM](#F-OpenPath-Standard-Base-Service-PlanetService-SMALL_PLANET_MAXIMUM 'OpenPath.Standard.Base.Service.PlanetService.SMALL_PLANET_MAXIMUM')
-  - [_standardUnitOfWork](#F-OpenPath-Standard-Base-Service-PlanetService-_standardUnitOfWork 'OpenPath.Standard.Base.Service.PlanetService._standardUnitOfWork')
-  - [AddUpdateAsync(planet)](#M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-OpenPath-Standard-Base-Data-Database-PlanetModel- 'OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(OpenPath.Standard.Base.Data.Database.PlanetModel)')
-  - [AddUpdateAsync(planets)](#M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
-  - [GetAsync(id)](#M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-Int64- 'OpenPath.Standard.Base.Service.PlanetService.GetAsync(System.Int64)')
-  - [GetAsync(id)](#M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-String- 'OpenPath.Standard.Base.Service.PlanetService.GetAsync(System.String)')
-  - [ListAsync(filter)](#M-OpenPath-Standard-Base-Service-PlanetService-ListAsync-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco- 'OpenPath.Standard.Base.Service.PlanetService.ListAsync(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)')
-  - [RemoveAsync(id)](#M-OpenPath-Standard-Base-Service-PlanetService-RemoveAsync-System-Int64- 'OpenPath.Standard.Base.Service.PlanetService.RemoveAsync(System.Int64)')
-  - [RemoveAsync(id)](#M-OpenPath-Standard-Base-Service-PlanetService-RemoveAsync-System-String- 'OpenPath.Standard.Base.Service.PlanetService.RemoveAsync(System.String)')
-  - [generateKeyAsync(name,checkIfExists)](#M-OpenPath-Standard-Base-Service-PlanetService-generateKeyAsync-System-String,System-Boolean- 'OpenPath.Standard.Base.Service.PlanetService.generateKeyAsync(System.String,System.Boolean)')
-  - [updateChanged(originalPlanet,updatedPlanet)](#M-OpenPath-Standard-Base-Service-PlanetService-updateChanged-OpenPath-Standard-Base-Data-Database-PlanetModel,OpenPath-Standard-Base-Data-Database-PlanetModel- 'OpenPath.Standard.Base.Service.PlanetService.updateChanged(OpenPath.Standard.Base.Data.Database.PlanetModel,OpenPath.Standard.Base.Data.Database.PlanetModel)')
+- [IPlanetService](#T-WebApi-Software-Standard-Base-Service-Interface-IPlanetService 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService')
+  - [AddUpdateAsync(planet)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-WebApi-Software-Standard-Base-Data-Database-PlanetModel- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(WebApi.Software.Standard.Base.Data.Database.PlanetModel)')
+  - [AddUpdateAsync(planet)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{WebApi-Software-Standard-Base-Data-Database-PlanetModel}- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel})')
+  - [GetAsync(id)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-Int64- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.Int64)')
+  - [GetAsync(id)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-String- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.String)')
+  - [ListAsync(filter)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-ListAsync-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.ListAsync(WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco)')
+  - [RemoveAsync(id)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-Int64- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.Int64)')
+  - [RemoveAsync(id)](#M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-String- 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.String)')
+- [PlanetService](#T-WebApi-Software-Standard-Base-Service-PlanetService 'WebApi.Software.Standard.Base.Service.PlanetService')
+  - [#ctor(standardUnitOfWork)](#M-WebApi-Software-Standard-Base-Service-PlanetService-#ctor-WebApi-Software-Standard-Base-Repository-Interface-IStandardUnitOfWork- 'WebApi.Software.Standard.Base.Service.PlanetService.#ctor(WebApi.Software.Standard.Base.Repository.Interface.IStandardUnitOfWork)')
+  - [LARGE_PLANET_MINIMUM](#F-WebApi-Software-Standard-Base-Service-PlanetService-LARGE_PLANET_MINIMUM 'WebApi.Software.Standard.Base.Service.PlanetService.LARGE_PLANET_MINIMUM')
+  - [MEDIUM_PLANET_MAXIMUM](#F-WebApi-Software-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MAXIMUM 'WebApi.Software.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MAXIMUM')
+  - [MEDIUM_PLANET_MINIMUM](#F-WebApi-Software-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MINIMUM 'WebApi.Software.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MINIMUM')
+  - [SMALL_PLANET_MAXIMUM](#F-WebApi-Software-Standard-Base-Service-PlanetService-SMALL_PLANET_MAXIMUM 'WebApi.Software.Standard.Base.Service.PlanetService.SMALL_PLANET_MAXIMUM')
+  - [_standardUnitOfWork](#F-WebApi-Software-Standard-Base-Service-PlanetService-_standardUnitOfWork 'WebApi.Software.Standard.Base.Service.PlanetService._standardUnitOfWork')
+  - [AddUpdateAsync(planet)](#M-WebApi-Software-Standard-Base-Service-PlanetService-AddUpdateAsync-WebApi-Software-Standard-Base-Data-Database-PlanetModel- 'WebApi.Software.Standard.Base.Service.PlanetService.AddUpdateAsync(WebApi.Software.Standard.Base.Data.Database.PlanetModel)')
+  - [AddUpdateAsync(planets)](#M-WebApi-Software-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{WebApi-Software-Standard-Base-Data-Database-PlanetModel}- 'WebApi.Software.Standard.Base.Service.PlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel})')
+  - [GetAsync(id)](#M-WebApi-Software-Standard-Base-Service-PlanetService-GetAsync-System-Int64- 'WebApi.Software.Standard.Base.Service.PlanetService.GetAsync(System.Int64)')
+  - [GetAsync(id)](#M-WebApi-Software-Standard-Base-Service-PlanetService-GetAsync-System-String- 'WebApi.Software.Standard.Base.Service.PlanetService.GetAsync(System.String)')
+  - [ListAsync(filter)](#M-WebApi-Software-Standard-Base-Service-PlanetService-ListAsync-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco- 'WebApi.Software.Standard.Base.Service.PlanetService.ListAsync(WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco)')
+  - [RemoveAsync(id)](#M-WebApi-Software-Standard-Base-Service-PlanetService-RemoveAsync-System-Int64- 'WebApi.Software.Standard.Base.Service.PlanetService.RemoveAsync(System.Int64)')
+  - [RemoveAsync(id)](#M-WebApi-Software-Standard-Base-Service-PlanetService-RemoveAsync-System-String- 'WebApi.Software.Standard.Base.Service.PlanetService.RemoveAsync(System.String)')
+  - [generateKeyAsync(name,checkIfExists)](#M-WebApi-Software-Standard-Base-Service-PlanetService-generateKeyAsync-System-String,System-Boolean- 'WebApi.Software.Standard.Base.Service.PlanetService.generateKeyAsync(System.String,System.Boolean)')
+  - [updateChanged(originalPlanet,updatedPlanet)](#M-WebApi-Software-Standard-Base-Service-PlanetService-updateChanged-WebApi-Software-Standard-Base-Data-Database-PlanetModel,WebApi-Software-Standard-Base-Data-Database-PlanetModel- 'WebApi.Software.Standard.Base.Service.PlanetService.updateChanged(WebApi.Software.Standard.Base.Data.Database.PlanetModel,WebApi.Software.Standard.Base.Data.Database.PlanetModel)')
 
-<a name='T-OpenPath-Standard-Base-Service-Interface-IPlanetService'></a>
+<a name='T-WebApi-Software-Standard-Base-Service-Interface-IPlanetService'></a>
 ## IPlanetService `type`
 
 ##### Namespace
 
-OpenPath.Standard.Base.Service.Interface
+WebApi.Software.Standard.Base.Service.Interface
 
 ##### Summary
 
 Service to Manage Planets.
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-OpenPath-Standard-Base-Data-Database-PlanetModel-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-WebApi-Software-Standard-Base-Data-Database-PlanetModel-'></a>
 ### AddUpdateAsync(planet) `method`
 
 ##### Summary
@@ -53,9 +53,9 @@ Planet.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| planet | [OpenPath.Standard.Base.Data.Database.PlanetModel](#T-OpenPath-Standard-Base-Data-Database-PlanetModel 'OpenPath.Standard.Base.Data.Database.PlanetModel') | The Planet to Add or Update. |
+| planet | [WebApi.Software.Standard.Base.Data.Database.PlanetModel](#T-WebApi-Software-Standard-Base-Data-Database-PlanetModel 'WebApi.Software.Standard.Base.Data.Database.PlanetModel') | The Planet to Add or Update. |
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{WebApi-Software-Standard-Base-Data-Database-PlanetModel}-'></a>
 ### AddUpdateAsync(planet) `method`
 
 ##### Summary
@@ -70,9 +70,9 @@ then it will add the Planet.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| planet | [System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}') | The Planet to Add or Update. |
+| planet | [System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel}') | The Planet to Add or Update. |
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-Int64-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-Int64-'></a>
 ### GetAsync(id) `method`
 
 ##### Summary
@@ -89,7 +89,7 @@ A Planet associated to the ID.
 | ---- | ---- | ----------- |
 | id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The ID of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-String-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-GetAsync-System-String-'></a>
 ### GetAsync(id) `method`
 
 ##### Summary
@@ -106,7 +106,7 @@ A Planet associated to the Key.
 | ---- | ---- | ----------- |
 | id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Key of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-ListAsync-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-ListAsync-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
 ### ListAsync(filter) `method`
 
 ##### Summary
@@ -118,9 +118,9 @@ allowed per page.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| filter | [OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco](#T-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco') | The filter(s) to apply to this list. |
+| filter | [WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco](#T-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco 'WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco') | The filter(s) to apply to this list. |
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-Int64-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-Int64-'></a>
 ### RemoveAsync(id) `method`
 
 ##### Summary
@@ -133,7 +133,7 @@ Remove a Planet by the Planet ID.
 | ---- | ---- | ----------- |
 | id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The ID of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-String-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-Interface-IPlanetService-RemoveAsync-System-String-'></a>
 ### RemoveAsync(id) `method`
 
 ##### Summary
@@ -146,18 +146,18 @@ Remove a Planet by the Planet Key.
 | ---- | ---- | ----------- |
 | id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Key of the Planet. |
 
-<a name='T-OpenPath-Standard-Base-Service-PlanetService'></a>
+<a name='T-WebApi-Software-Standard-Base-Service-PlanetService'></a>
 ## PlanetService `type`
 
 ##### Namespace
 
-OpenPath.Standard.Base.Service
+WebApi.Software.Standard.Base.Service
 
 ##### Summary
 
 The base service class for calling planets and all the subsets of data from each planet.
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-#ctor-OpenPath-Standard-Base-Repository-Interface-IStandardUnitOfWork-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-#ctor-WebApi-Software-Standard-Base-Repository-Interface-IStandardUnitOfWork-'></a>
 ### #ctor(standardUnitOfWork) `constructor`
 
 ##### Summary
@@ -169,44 +169,44 @@ database.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| standardUnitOfWork | [OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork](#T-OpenPath-Standard-Base-Repository-Interface-IStandardUnitOfWork 'OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork') | The unit of work for Planets. |
+| standardUnitOfWork | [WebApi.Software.Standard.Base.Repository.Interface.IStandardUnitOfWork](#T-WebApi-Software-Standard-Base-Repository-Interface-IStandardUnitOfWork 'WebApi.Software.Standard.Base.Repository.Interface.IStandardUnitOfWork') | The unit of work for Planets. |
 
-<a name='F-OpenPath-Standard-Base-Service-PlanetService-LARGE_PLANET_MINIMUM'></a>
+<a name='F-WebApi-Software-Standard-Base-Service-PlanetService-LARGE_PLANET_MINIMUM'></a>
 ### LARGE_PLANET_MINIMUM `constants`
 
 ##### Summary
 
 The minimum size of a large planet.
 
-<a name='F-OpenPath-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MAXIMUM'></a>
+<a name='F-WebApi-Software-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MAXIMUM'></a>
 ### MEDIUM_PLANET_MAXIMUM `constants`
 
 ##### Summary
 
 The maximum size of a medimum sized planet.
 
-<a name='F-OpenPath-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MINIMUM'></a>
+<a name='F-WebApi-Software-Standard-Base-Service-PlanetService-MEDIUM_PLANET_MINIMUM'></a>
 ### MEDIUM_PLANET_MINIMUM `constants`
 
 ##### Summary
 
 The mimimum size of a medimum sized planet.
 
-<a name='F-OpenPath-Standard-Base-Service-PlanetService-SMALL_PLANET_MAXIMUM'></a>
+<a name='F-WebApi-Software-Standard-Base-Service-PlanetService-SMALL_PLANET_MAXIMUM'></a>
 ### SMALL_PLANET_MAXIMUM `constants`
 
 ##### Summary
 
 The maximum size of a planet that is small.
 
-<a name='F-OpenPath-Standard-Base-Service-PlanetService-_standardUnitOfWork'></a>
+<a name='F-WebApi-Software-Standard-Base-Service-PlanetService-_standardUnitOfWork'></a>
 ### _standardUnitOfWork `constants`
 
 ##### Summary
 
 The injected unit of work for the data where the planet exists.
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-OpenPath-Standard-Base-Data-Database-PlanetModel-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-AddUpdateAsync-WebApi-Software-Standard-Base-Data-Database-PlanetModel-'></a>
 ### AddUpdateAsync(planet) `method`
 
 ##### Summary
@@ -220,9 +220,9 @@ Planet.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| planet | [OpenPath.Standard.Base.Data.Database.PlanetModel](#T-OpenPath-Standard-Base-Data-Database-PlanetModel 'OpenPath.Standard.Base.Data.Database.PlanetModel') | The Planet to Add or Update. |
+| planet | [WebApi.Software.Standard.Base.Data.Database.PlanetModel](#T-WebApi-Software-Standard-Base-Data-Database-PlanetModel 'WebApi.Software.Standard.Base.Data.Database.PlanetModel') | The Planet to Add or Update. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-AddUpdateAsync-System-Collections-Generic-IEnumerable{WebApi-Software-Standard-Base-Data-Database-PlanetModel}-'></a>
 ### AddUpdateAsync(planets) `method`
 
 ##### Summary
@@ -237,9 +237,9 @@ then it will add the Planet.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| planets | [System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}') | The Planets to Add or Update. |
+| planets | [System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel}') | The Planets to Add or Update. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-Int64-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-GetAsync-System-Int64-'></a>
 ### GetAsync(id) `method`
 
 ##### Summary
@@ -256,7 +256,7 @@ A Planet associated to the ID.
 | ---- | ---- | ----------- |
 | id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The ID of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-GetAsync-System-String-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-GetAsync-System-String-'></a>
 ### GetAsync(id) `method`
 
 ##### Summary
@@ -273,7 +273,7 @@ A Planet associated to the Key.
 | ---- | ---- | ----------- |
 | id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Key of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-ListAsync-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-ListAsync-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
 ### ListAsync(filter) `method`
 
 ##### Summary
@@ -285,9 +285,9 @@ allowed per page.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| filter | [OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco](#T-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco') | The filter(s) to apply to this list. |
+| filter | [WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco](#T-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco 'WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco') | The filter(s) to apply to this list. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-RemoveAsync-System-Int64-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-RemoveAsync-System-Int64-'></a>
 ### RemoveAsync(id) `method`
 
 ##### Summary
@@ -300,7 +300,7 @@ Remove a Planet by the Planet ID.
 | ---- | ---- | ----------- |
 | id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The ID of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-RemoveAsync-System-String-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-RemoveAsync-System-String-'></a>
 ### RemoveAsync(id) `method`
 
 ##### Summary
@@ -313,7 +313,7 @@ Remove a Planet by the Planet Key.
 | ---- | ---- | ----------- |
 | id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Key of the Planet. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-generateKeyAsync-System-String,System-Boolean-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-generateKeyAsync-System-String,System-Boolean-'></a>
 ### generateKeyAsync(name,checkIfExists) `method`
 
 ##### Summary
@@ -333,7 +333,7 @@ The URL cased name.
 | checkIfExists | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | If empty or true will throw a Duplicate Name Expection if
 the name exists. |
 
-<a name='M-OpenPath-Standard-Base-Service-PlanetService-updateChanged-OpenPath-Standard-Base-Data-Database-PlanetModel,OpenPath-Standard-Base-Data-Database-PlanetModel-'></a>
+<a name='M-WebApi-Software-Standard-Base-Service-PlanetService-updateChanged-WebApi-Software-Standard-Base-Data-Database-PlanetModel,WebApi-Software-Standard-Base-Data-Database-PlanetModel-'></a>
 ### updateChanged(originalPlanet,updatedPlanet) `method`
 
 ##### Summary
@@ -345,5 +345,5 @@ Planet if the values are different.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| originalPlanet | [OpenPath.Standard.Base.Data.Database.PlanetModel](#T-OpenPath-Standard-Base-Data-Database-PlanetModel 'OpenPath.Standard.Base.Data.Database.PlanetModel') | Original Planet. |
-| updatedPlanet | [OpenPath.Standard.Base.Data.Database.PlanetModel](#T-OpenPath-Standard-Base-Data-Database-PlanetModel 'OpenPath.Standard.Base.Data.Database.PlanetModel') | Updated Planet. |
+| originalPlanet | [WebApi.Software.Standard.Base.Data.Database.PlanetModel](#T-WebApi-Software-Standard-Base-Data-Database-PlanetModel 'WebApi.Software.Standard.Base.Data.Database.PlanetModel') | Original Planet. |
+| updatedPlanet | [WebApi.Software.Standard.Base.Data.Database.PlanetModel](#T-WebApi-Software-Standard-Base-Data-Database-PlanetModel 'WebApi.Software.Standard.Base.Data.Database.PlanetModel') | Updated Planet. |

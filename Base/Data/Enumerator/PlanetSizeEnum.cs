@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace OpenPath.Standard.Base.Data.Enumerator {
+namespace WebApi.Software.Standard.Base.Data.Enumerator {
 
     /// <summary>
     /// Basic set of Planet sizes.

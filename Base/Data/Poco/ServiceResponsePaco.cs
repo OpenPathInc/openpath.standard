@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Data.Poco {
+namespace WebApi.Software.Standard.Base.Data.Poco {
 
     public class ServiceResponsePaco {
 

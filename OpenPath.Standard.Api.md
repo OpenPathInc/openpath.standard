@@ -1,39 +1,39 @@
 <a name='assembly'></a>
-# OpenPath.Standard.Api
+# WebApiSoftware-Standard-Api
 
 ## Contents
 
-- [BaseContoller](#T-OpenPath-Standard-Api-V1-Controllers-BaseContoller 'OpenPath.Standard.Api.V1.Controllers.BaseContoller')
-  - [#ctor(loggerFactory)](#M-OpenPath-Standard-Api-V1-Controllers-BaseContoller-#ctor-Microsoft-Extensions-Logging-ILoggerFactory- 'OpenPath.Standard.Api.V1.Controllers.BaseContoller.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)')
-  - [Logger](#P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-Logger 'OpenPath.Standard.Api.V1.Controllers.BaseContoller.Logger')
-  - [LoggerFactory](#P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-LoggerFactory 'OpenPath.Standard.Api.V1.Controllers.BaseContoller.LoggerFactory')
-- [PlanetsController](#T-OpenPath-Standard-Api-V1-Controllers-PlanetsController 'OpenPath.Standard.Api.V1.Controllers.PlanetsController')
-  - [#ctor(loggerFactory,planetService)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,OpenPath-Standard-Base-Service-Interface-IPlanetService- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,OpenPath.Standard.Base.Service.Interface.IPlanetService)')
-  - [DeleteAsync(idKey)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-DeleteAsync-System-String- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.DeleteAsync(System.String)')
-  - [Get(filter)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)')
-  - [Get(idKey)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-System-String- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(System.String)')
-  - [PostAsync(planets)](#M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}- 'OpenPath.Standard.Api.V1.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})')
-- [Program](#T-OpenPath-Standard-Api-Program 'OpenPath.Standard.Api.Program')
-  - [CreateHostBuilder(args)](#M-OpenPath-Standard-Api-Program-CreateHostBuilder-System-String[]- 'OpenPath.Standard.Api.Program.CreateHostBuilder(System.String[])')
-  - [Main(args)](#M-OpenPath-Standard-Api-Program-Main-System-String[]- 'OpenPath.Standard.Api.Program.Main(System.String[])')
-- [Startup](#T-OpenPath-Standard-Api-Startup 'OpenPath.Standard.Api.Startup')
-  - [#ctor(configuration)](#M-OpenPath-Standard-Api-Startup-#ctor-Microsoft-Extensions-Configuration-IConfiguration- 'OpenPath.Standard.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)')
-  - [Configuration](#P-OpenPath-Standard-Api-Startup-Configuration 'OpenPath.Standard.Api.Startup.Configuration')
-  - [Configure(applicationBuilder,hostEnvironment)](#M-OpenPath-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment- 'OpenPath.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)')
-  - [ConfigureServices(services)](#M-OpenPath-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection- 'OpenPath.Standard.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)')
+- [BaseContoller](#T-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller 'WebApi.Software.Standard.Api.V1.Controllers.BaseContoller')
+  - [#ctor(loggerFactory)](#M-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller-#ctor-Microsoft-Extensions-Logging-ILoggerFactory- 'WebApi.Software.Standard.Api.V1.Controllers.BaseContoller.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)')
+  - [Logger](#P-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller-Logger 'WebApi.Software.Standard.Api.V1.Controllers.BaseContoller.Logger')
+  - [LoggerFactory](#P-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller-LoggerFactory 'WebApi.Software.Standard.Api.V1.Controllers.BaseContoller.LoggerFactory')
+- [PlanetsController](#T-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController 'WebApi.Software.Standard.Api.V1.Controllers.PlanetsController')
+  - [#ctor(loggerFactory,planetService)](#M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,WebApi-Software-Standard-Base-Service-Interface-IPlanetService- 'WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,WebApi.Software.Standard.Base.Service.Interface.IPlanetService)')
+  - [DeleteAsync(idKey)](#M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-DeleteAsync-System-String- 'WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.DeleteAsync(System.String)')
+  - [Get(filter)](#M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-Get-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco- 'WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.Get(WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco)')
+  - [Get(idKey)](#M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-Get-System-String- 'WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.Get(System.String)')
+  - [PostAsync(planets)](#M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{WebApi-Software-Standard-Base-Data-Database-PlanetModel}- 'WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel})')
+- [Program](#T-WebApi-Software-Standard-Api-Program 'WebApi.Software.Standard.Api.Program')
+  - [CreateHostBuilder(args)](#M-WebApi-Software-Standard-Api-Program-CreateHostBuilder-System-String[]- 'WebApi.Software.Standard.Api.Program.CreateHostBuilder(System.String[])')
+  - [Main(args)](#M-WebApi-Software-Standard-Api-Program-Main-System-String[]- 'WebApi.Software.Standard.Api.Program.Main(System.String[])')
+- [Startup](#T-WebApi-Software-Standard-Api-Startup 'WebApi.Software.Standard.Api.Startup')
+  - [#ctor(configuration)](#M-WebApi-Software-Standard-Api-Startup-#ctor-Microsoft-Extensions-Configuration-IConfiguration- 'WebApi.Software.Standard.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)')
+  - [Configuration](#P-WebApi-Software-Standard-Api-Startup-Configuration 'WebApi.Software.Standard.Api.Startup.Configuration')
+  - [Configure(applicationBuilder,hostEnvironment)](#M-WebApi-Software-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment- 'WebApi.Software.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)')
+  - [ConfigureServices(services)](#M-WebApi-Software-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection- 'WebApi.Software.Standard.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)')
 
-<a name='T-OpenPath-Standard-Api-V1-Controllers-BaseContoller'></a>
+<a name='T-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller'></a>
 ## BaseContoller `type`
 
 ##### Namespace
 
-OpenPath.Standard.Api.V1.Controllers
+WebApi.Software.Standard.Api.V1.Controllers
 
 ##### Summary
 
 Base controller for API endpoints.
 
-<a name='M-OpenPath-Standard-Api-V1-Controllers-BaseContoller-#ctor-Microsoft-Extensions-Logging-ILoggerFactory-'></a>
+<a name='M-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller-#ctor-Microsoft-Extensions-Logging-ILoggerFactory-'></a>
 ### #ctor(loggerFactory) `constructor`
 
 ##### Summary
@@ -46,7 +46,7 @@ The Base endpoint constructor.
 | ---- | ---- | ----------- |
 | loggerFactory | [Microsoft.Extensions.Logging.ILoggerFactory](#T-Microsoft-Extensions-Logging-ILoggerFactory 'Microsoft.Extensions.Logging.ILoggerFactory') | The Microsoft Logger Factory. |
 
-<a name='P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-Logger'></a>
+<a name='P-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller-Logger'></a>
 ### Logger `property`
 
 ##### Summary
@@ -55,7 +55,7 @@ A generic interface for logging where the category name is derived from the spec
 TCategoryName type name. Generally used to enable activation of a named
 Microsoft.Extensions.Logging.ILogger from dependency injection.
 
-<a name='P-OpenPath-Standard-Api-V1-Controllers-BaseContoller-LoggerFactory'></a>
+<a name='P-WebApi-Software-Standard-Api-V1-Controllers-BaseContoller-LoggerFactory'></a>
 ### LoggerFactory `property`
 
 ##### Summary
@@ -64,18 +64,18 @@ Represents a type used to configure the logging system and create instances of
 Microsoft.Extensions.Logging.ILogger from the registered
 Microsoft.Extensions.Logging.ILoggerProviders.
 
-<a name='T-OpenPath-Standard-Api-V1-Controllers-PlanetsController'></a>
+<a name='T-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController'></a>
 ## PlanetsController `type`
 
 ##### Namespace
 
-OpenPath.Standard.Api.V1.Controllers
+WebApi.Software.Standard.Api.V1.Controllers
 
 ##### Summary
 
 Endpoints for managing Planet data.
 
-<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,OpenPath-Standard-Base-Service-Interface-IPlanetService-'></a>
+<a name='M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-#ctor-Microsoft-Extensions-Logging-ILoggerFactory,WebApi-Software-Standard-Base-Service-Interface-IPlanetService-'></a>
 ### #ctor(loggerFactory,planetService) `constructor`
 
 ##### Summary
@@ -87,9 +87,9 @@ The Planets endpoint constructor.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | loggerFactory | [Microsoft.Extensions.Logging.ILoggerFactory](#T-Microsoft-Extensions-Logging-ILoggerFactory 'Microsoft.Extensions.Logging.ILoggerFactory') | The Microsoft Logger Factory. |
-| planetService | [OpenPath.Standard.Base.Service.Interface.IPlanetService](#T-OpenPath-Standard-Base-Service-Interface-IPlanetService 'OpenPath.Standard.Base.Service.Interface.IPlanetService') | Service to Manage Planets. |
+| planetService | [WebApi.Software.Standard.Base.Service.Interface.IPlanetService](#T-WebApi-Software-Standard-Base-Service-Interface-IPlanetService 'WebApi.Software.Standard.Base.Service.Interface.IPlanetService') | Service to Manage Planets. |
 
-<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-DeleteAsync-System-String-'></a>
+<a name='M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-DeleteAsync-System-String-'></a>
 ### DeleteAsync(idKey) `method`
 
 ##### Summary
@@ -106,7 +106,7 @@ If the delete was successfull.
 | ---- | ---- | ----------- |
 | idKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Planet ID or Key. |
 
-<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
+<a name='M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-Get-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco-'></a>
 ### Get(filter) `method`
 
 ##### Summary
@@ -121,9 +121,9 @@ Returns an evelope with filtered planets in the data.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| filter | [OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco](#T-OpenPath-Standard-Base-Data-Poco-PlanetFilterPoco 'OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco') | Filter Parameters |
+| filter | [WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco](#T-WebApi-Software-Standard-Base-Data-Poco-PlanetFilterPoco 'WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco') | Filter Parameters |
 
-<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-Get-System-String-'></a>
+<a name='M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-Get-System-String-'></a>
 ### Get(idKey) `method`
 
 ##### Summary
@@ -140,7 +140,7 @@ A an Envelope with Planet data.
 | ---- | ---- | ----------- |
 | idKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The Planet ID or Key. |
 
-<a name='M-OpenPath-Standard-Api-V1-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{OpenPath-Standard-Base-Data-Database-PlanetModel}-'></a>
+<a name='M-WebApi-Software-Standard-Api-V1-Controllers-PlanetsController-PostAsync-System-Collections-Generic-IEnumerable{WebApi-Software-Standard-Base-Data-Database-PlanetModel}-'></a>
 ### PostAsync(planets) `method`
 
 ##### Summary
@@ -156,21 +156,21 @@ Returns an evelope with the updated and/or created planets in the data.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| planets | [System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel}') | An array of Planets. |
+| planets | [System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel}') | An array of Planets. |
 
-<a name='T-OpenPath-Standard-Api-Program'></a>
+<a name='T-WebApi-Software-Standard-Api-Program'></a>
 ## Program `type`
 
 ##### Namespace
 
-OpenPath.Standard.Api
+WebApi.Software.Standard.Api
 
 ##### Summary
 
 This is the main API program staring point that fires up the hosting services and Start Up
 class.
 
-<a name='M-OpenPath-Standard-Api-Program-CreateHostBuilder-System-String[]-'></a>
+<a name='M-WebApi-Software-Standard-Api-Program-CreateHostBuilder-System-String[]-'></a>
 ### CreateHostBuilder(args) `method`
 
 ##### Summary
@@ -187,7 +187,7 @@ A running web hosting environment.
 | ---- | ---- | ----------- |
 | args | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Takes the arguments from the Main method. |
 
-<a name='M-OpenPath-Standard-Api-Program-Main-System-String[]-'></a>
+<a name='M-WebApi-Software-Standard-Api-Program-Main-System-String[]-'></a>
 ### Main(args) `method`
 
 ##### Summary
@@ -200,19 +200,19 @@ This is the Main entry method to fire off the application.
 | ---- | ---- | ----------- |
 | args | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | A string of optional parameters. |
 
-<a name='T-OpenPath-Standard-Api-Startup'></a>
+<a name='T-WebApi-Software-Standard-Api-Startup'></a>
 ## Startup `type`
 
 ##### Namespace
 
-OpenPath.Standard.Api
+WebApi.Software.Standard.Api
 
 ##### Summary
 
 The entry point to the application, setting up configuration and wiring up services the
 application will use.
 
-<a name='M-OpenPath-Standard-Api-Startup-#ctor-Microsoft-Extensions-Configuration-IConfiguration-'></a>
+<a name='M-WebApi-Software-Standard-Api-Startup-#ctor-Microsoft-Extensions-Configuration-IConfiguration-'></a>
 ### #ctor(configuration) `constructor`
 
 ##### Summary
@@ -225,14 +225,14 @@ The start up constructor for this class.
 | ---- | ---- | ----------- |
 | configuration | [Microsoft.Extensions.Configuration.IConfiguration](#T-Microsoft-Extensions-Configuration-IConfiguration 'Microsoft.Extensions.Configuration.IConfiguration') | Represents a set of key/value application configuration properties. |
 
-<a name='P-OpenPath-Standard-Api-Startup-Configuration'></a>
+<a name='P-WebApi-Software-Standard-Api-Startup-Configuration'></a>
 ### Configuration `property`
 
 ##### Summary
 
 Represents a set of key/value application configuration properties.
 
-<a name='M-OpenPath-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment-'></a>
+<a name='M-WebApi-Software-Standard-Api-Startup-Configure-Microsoft-AspNetCore-Builder-IApplicationBuilder,Microsoft-AspNetCore-Hosting-IWebHostEnvironment-'></a>
 ### Configure(applicationBuilder,hostEnvironment) `method`
 
 ##### Summary
@@ -246,7 +246,7 @@ This method gets called by the runtime. Use this method to configure the HTTP re
 | applicationBuilder | [Microsoft.AspNetCore.Builder.IApplicationBuilder](#T-Microsoft-AspNetCore-Builder-IApplicationBuilder 'Microsoft.AspNetCore.Builder.IApplicationBuilder') | Defines a class that provides the mechanisms to configure an application's request pipeline. |
 | hostEnvironment | [Microsoft.AspNetCore.Hosting.IWebHostEnvironment](#T-Microsoft-AspNetCore-Hosting-IWebHostEnvironment 'Microsoft.AspNetCore.Hosting.IWebHostEnvironment') | Provides information about the web hosting environment an application is running in. |
 
-<a name='M-OpenPath-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection-'></a>
+<a name='M-WebApi-Software-Standard-Api-Startup-ConfigureServices-Microsoft-Extensions-DependencyInjection-IServiceCollection-'></a>
 ### ConfigureServices(services) `method`
 
 ##### Summary

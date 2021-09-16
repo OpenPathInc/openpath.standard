@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace OpenPath.Standard.Base.Repository.Migrations
+namespace WebApi.Software.Standard.Base.Repository.Migrations
 {
     public partial class init : Migration
     {

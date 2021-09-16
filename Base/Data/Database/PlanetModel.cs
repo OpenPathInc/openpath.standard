@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OpenPath.Standard.Base.Data.Database {
+namespace WebApi.Software.Standard.Base.Data.Database {
 
 
     /// <summary>

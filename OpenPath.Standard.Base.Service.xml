@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>OpenPath.Standard.Base.Service</name>
+        <name>WebApiSoftware-Standard-Service</name>
     </assembly>
     <members>
-        <member name="T:OpenPath.Standard.Base.Service.Interface.IPlanetService">
+        <member name="T:WebApi.Software.Standard.Base.Service.Interface.IPlanetService">
             <summary>
             Service to Manage Planets.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(OpenPath.Standard.Base.Data.Database.PlanetModel)">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(WebApi.Software.Standard.Base.Data.Database.PlanetModel)">
             <summary>
             This method will add or update the Planet passed to it. If the Planet already has a
             Planet ID that is greater than zero (0) then the method will lookup and update the
@@ -18,7 +18,7 @@
             </summary>
             <param name="planet">The Planet to Add or Update.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel})">
             <summary>
             This method will add or update an array of Planets passed to it. The Planets will be
             sorted by what needs to be added or updated based on the following parameters: If the
@@ -28,77 +28,77 @@
             </summary>
             <param name="planet">The Planet to Add or Update.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.ListAsync(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.ListAsync(WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco)">
             <summary>
             Returns a paged list of Planets based on the filter and the maximum amount of items
             allowed per page.
             </summary>
             <param name="filter">The filter(s) to apply to this list.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.Int64)">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.Int64)">
             <summary>
             Remove a Planet by the Planet ID.
             </summary>
             <param name="id">The ID of the Planet.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.String)">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.RemoveAsync(System.String)">
             <summary>
             Remove a Planet by the Planet Key.
             </summary>
             <param name="id">The Key of the Planet.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.Int64)">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.Int64)">
             <summary>
             Get a Planet by the Planet ID.
             </summary>
             <param name="id">The ID of the Planet.</param>
             <returns>A Planet associated to the ID.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.String)">
+        <member name="M:WebApi.Software.Standard.Base.Service.Interface.IPlanetService.GetAsync(System.String)">
             <summary>
             Get a Planet by the Planet Key.
             </summary>
             <param name="id">The Key of the Planet.</param>
             <returns>A Planet associated to the Key.</returns>
         </member>
-        <member name="T:OpenPath.Standard.Base.Service.PlanetService">
+        <member name="T:WebApi.Software.Standard.Base.Service.PlanetService">
             <summary>
             The base service class for calling planets and all the subsets of data from each planet.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Base.Service.PlanetService.SMALL_PLANET_MAXIMUM">
+        <member name="F:WebApi.Software.Standard.Base.Service.PlanetService.SMALL_PLANET_MAXIMUM">
             <summary>
             The maximum size of a planet that is small.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MINIMUM">
+        <member name="F:WebApi.Software.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MINIMUM">
             <summary>
             The mimimum size of a medimum sized planet.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MAXIMUM">
+        <member name="F:WebApi.Software.Standard.Base.Service.PlanetService.MEDIUM_PLANET_MAXIMUM">
             <summary>
             The maximum size of a medimum sized planet.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Base.Service.PlanetService.LARGE_PLANET_MINIMUM">
+        <member name="F:WebApi.Software.Standard.Base.Service.PlanetService.LARGE_PLANET_MINIMUM">
             <summary>
             The minimum size of a large planet.
             </summary>
         </member>
-        <member name="F:OpenPath.Standard.Base.Service.PlanetService._standardUnitOfWork">
+        <member name="F:WebApi.Software.Standard.Base.Service.PlanetService._standardUnitOfWork">
             <summary>
             The injected unit of work for the data where the planet exists.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.#ctor(OpenPath.Standard.Base.Repository.Interface.IStandardUnitOfWork)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.#ctor(WebApi.Software.Standard.Base.Repository.Interface.IStandardUnitOfWork)">
             <summary>
             The injectable constructor for the planet service that connects the service to the
             database.
             </summary>
             <param name="standardUnitOfWork">The unit of work for Planets.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(OpenPath.Standard.Base.Data.Database.PlanetModel)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.AddUpdateAsync(WebApi.Software.Standard.Base.Data.Database.PlanetModel)">
             <summary>
             This method will add or update the Planet passed to it. If the Planet already has a
             Planet ID that is greater than zero (0) then the method will lookup and update the
@@ -107,7 +107,7 @@
             </summary>
             <param name="planet">The Planet to Add or Update.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.AddUpdateAsync(System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel})">
             <summary>
             This method will add or update an array of Planets passed to it. The Planets will be
             sorted by what needs to be added or updated based on the following parameters: If the
@@ -117,40 +117,40 @@
             </summary>
             <param name="planets">The Planets to Add or Update.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.ListAsync(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.ListAsync(WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco)">
             <summary>
             Returns a paged list of Planets based on the filter and the maximum amount of items
             allowed per page.
             </summary>
             <param name="filter">The filter(s) to apply to this list.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.GetAsync(System.Int64)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.GetAsync(System.Int64)">
             <summary>
             Get a Planet by the Planet ID.
             </summary>
             <param name="id">The ID of the Planet.</param>
             <returns>A Planet associated to the ID.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.GetAsync(System.String)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.GetAsync(System.String)">
             <summary>
             Get a Planet by the Planet Key.
             </summary>
             <param name="id">The Key of the Planet.</param>
             <returns>A Planet associated to the Key.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.RemoveAsync(System.Int64)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.RemoveAsync(System.Int64)">
             <summary>
             Remove a Planet by the Planet ID.
             </summary>
             <param name="id">The ID of the Planet.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.RemoveAsync(System.String)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.RemoveAsync(System.String)">
             <summary>
             Remove a Planet by the Planet Key.
             </summary>
             <param name="id">The Key of the Planet.</param>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.generateKeyAsync(System.String,System.Boolean)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.generateKeyAsync(System.String,System.Boolean)">
             <summary>
             Creates an URL cased version of the Planet name, if it already exists and the check if
             exists flag is not set then this method will throw a Duplicate Name Expection.
@@ -162,7 +162,7 @@
             </param>
             <returns>The URL cased name.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Base.Service.PlanetService.updateChanged(OpenPath.Standard.Base.Data.Database.PlanetModel,OpenPath.Standard.Base.Data.Database.PlanetModel)">
+        <member name="M:WebApi.Software.Standard.Base.Service.PlanetService.updateChanged(WebApi.Software.Standard.Base.Data.Database.PlanetModel,WebApi.Software.Standard.Base.Data.Database.PlanetModel)">
             <summary>
             Checks for changes between the updated Planet and original Planet and only updates the
             Planet if the values are different.

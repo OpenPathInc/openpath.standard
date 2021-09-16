@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Repository.Interface {
+namespace WebApi.Software.Standard.Base.Repository.Interface {
 
     /// <summary>
     /// The base interface used for all CRUD operations agianst the repository for the the database.

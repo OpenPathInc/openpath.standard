@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OpenPath.Standard.Base.Repository;
+using WebApi.Software.Standard.Base.Repository;
 
-namespace OpenPath.Standard.Base.Repository.Migrations
+namespace WebApi.Software.Standard.Base.Repository.Migrations
 {
     [DbContext(typeof(StandardDbContext))]
     [Migration("20210720142636_init")]

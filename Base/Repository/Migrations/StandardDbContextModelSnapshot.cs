@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OpenPath.Standard.Base.Repository;
+using WebApi.Software.Standard.Base.Repository;
 
-namespace OpenPath.Standard.Base.Repository.Migrations
+namespace WebApi.Software.Standard.Base.Repository.Migrations
 {
     [DbContext(typeof(StandardDbContext))]
     partial class StandardDbContextModelSnapshot : ModelSnapshot

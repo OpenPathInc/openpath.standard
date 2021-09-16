@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OpenPath.Standard.Base.Data.Database;
-using OpenPath.Standard.Base.Repository.Interface;
-using OpenPath.Utility.Repository.Data;
+using WebApi.Software.Standard.Base.Data.Database;
+using WebApi.Software.Standard.Base.Repository.Interface;
+using WebApi.Software.Utility.Repository.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Repository.Data {
+namespace WebApi.Software.Standard.Base.Repository.Data {
 
     /// <inheritdoc />
     /// <summary>

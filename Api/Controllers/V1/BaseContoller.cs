@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OpenPath.Standard.Base.Data.Poco;
-using OpenPath.Standard.Base.Service.Interface;
-using OpenPath.Utility.Repository.Interface;
-using OpenPath.Utility.Repository.Poco;
+using WebApi.Software.Standard.Base.Data.Poco;
+using WebApi.Software.Standard.Base.Service.Interface;
+using WebApi.Software.Utility.Repository.Interface;
+using WebApi.Software.Utility.Repository.Poco;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Api.V1.Controllers {
+namespace WebApi.Software.Standard.Api.V1.Controllers {
 
     /// <summary>
     /// Base controller for API endpoints.
@@ -31,7 +31,7 @@ namespace OpenPath.Standard.Api.V1.Controllers {
         /// TCategoryName type name. Generally used to enable activation of a named
         /// Microsoft.Extensions.Logging.ILogger from dependency injection.
         /// </summary>
-        internal ILogger<PlanetsController> Logger { get; set; }
+        internal ILogger<BaseContoller> Logger { get; set; }
 
         // CONSTRUCTORS
         // ====================================================================================================
@@ -46,7 +46,7 @@ namespace OpenPath.Standard.Api.V1.Controllers {
 
             // associate the injected services
             LoggerFactory = loggerFactory;
-            Logger = loggerFactory.CreateLogger<PlanetsController>();
+            Logger = loggerFactory.CreateLogger<BaseContoller>();
 
         }
 

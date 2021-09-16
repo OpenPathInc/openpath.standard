@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace OpenPath.Standard.Api {
+namespace WebApi.Software.Standard.Api {
 
     /// <summary>
     /// This is the main API program staring point that fires up the hosting services and Start Up

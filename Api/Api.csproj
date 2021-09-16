@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>OpenPath.Standard.Api</AssemblyName>
-    <RootNamespace>OpenPath.Standard.Api</RootNamespace>
+    <AssemblyName>WebApiSoftware-Standard-Api</AssemblyName>
+    <RootNamespace>WebApi.Software.Standard.Api</RootNamespace>
     <Authors>Jason Martin</Authors>
     <Company>OpenPath, Inc.</Company>
     <Product>The Perfect API Template</Product>

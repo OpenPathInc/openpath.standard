@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 using Microsoft.Extensions.Configuration;
-using OpenPath.Standard.Base.Data.Database;
-using OpenPath.Standard.Base.Repository.Interface;
+using WebApi.Software.Standard.Base.Data.Database;
+using WebApi.Software.Standard.Base.Repository.Interface;
 using System;
 
-namespace OpenPath.Standard.Base.Repository {
+namespace WebApi.Software.Standard.Base.Repository {
 
     /// <summary>
     /// The base database connection context for connecting to the database.

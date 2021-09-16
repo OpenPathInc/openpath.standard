@@ -1,4 +1,4 @@
-﻿namespace OpenPath.Utility.Repository.Interface {
+﻿namespace WebApi.Software.Utility.Repository.Interface {
 
     /// <summary>
     /// A generic filter to apply to entities.

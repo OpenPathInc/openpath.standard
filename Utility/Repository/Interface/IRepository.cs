@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenPath.Utility.Repository.Interface {
+namespace WebApi.Software.Utility.Repository.Interface {
 
     /// <summary>
     /// A generic repositiory pattern for apply basic C.R.U.D. (Create, Read, Update and Delete)

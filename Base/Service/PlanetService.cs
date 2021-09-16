@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OpenPath.Standard.Base.Data.Database;
-using OpenPath.Standard.Base.Data.Poco;
-using OpenPath.Standard.Base.Repository.Interface;
-using OpenPath.Standard.Base.Service.Interface;
+using WebApi.Software.Standard.Base.Data.Database;
+using WebApi.Software.Standard.Base.Data.Poco;
+using WebApi.Software.Standard.Base.Repository.Interface;
+using WebApi.Software.Standard.Base.Service.Interface;
 using OpenPath.Utility.Parser;
-using OpenPath.Utility.Repository.Helper;
+using WebApi.Software.Utility.Repository.Helper;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Service {
+namespace WebApi.Software.Standard.Base.Service {
 
     /// <summary>
     /// The base service class for calling planets and all the subsets of data from each planet.

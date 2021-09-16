@@ -1,9 +1,9 @@
-﻿using OpenPath.Standard.Base.Repository.Data;
-using OpenPath.Standard.Base.Repository.Interface;
+﻿using WebApi.Software.Standard.Base.Repository.Data;
+using WebApi.Software.Standard.Base.Repository.Interface;
 using System;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Repository {
+namespace WebApi.Software.Standard.Base.Repository {
 
     /// <summary>
     /// The base class used for all CRUD operations agianst the repository for the the database.

@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>OpenPath.Utility.Repository</name>
+        <name>WebApiSoftware-Util-Repo</name>
     </assembly>
     <members>
-        <member name="T:OpenPath.Utility.Repository.Abstract.FilterAbstract">
+        <member name="T:WebApi.Software.Utility.Repository.Abstract.FilterAbstract">
             <summary>
             A generic filter for database models.
             </summary>
         </member>
-        <member name="P:OpenPath.Utility.Repository.Abstract.FilterAbstract.Page">
+        <member name="P:WebApi.Software.Utility.Repository.Abstract.FilterAbstract.Page">
             <summary>
             The page number to return on the filter.
             </summary>
         </member>
-        <member name="P:OpenPath.Utility.Repository.Abstract.FilterAbstract.Limit">
+        <member name="P:WebApi.Software.Utility.Repository.Abstract.FilterAbstract.Limit">
             <summary>
             The amount or results to return on the filter.
             </summary>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Abstract.FilterAbstract.Clone">
+        <member name="M:WebApi.Software.Utility.Repository.Abstract.FilterAbstract.Clone">
             <summary>
             Clones the existing filter in a new memory space.
             </summary>
             <returns>A new copy of the filter.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Abstract.FilterAbstract.Clone(System.Int32)">
+        <member name="M:WebApi.Software.Utility.Repository.Abstract.FilterAbstract.Clone(System.Int32)">
             <summary>
             Returns a clone +/- the page number of the original filter.
             </summary>
             <param name="page">The amount you want to up or down the filter page.</param>
             <returns>The filter +/- the page number.</returns>
         </member>
-        <member name="T:OpenPath.Utility.Repository.Data.BaseRepository`2">
+        <member name="T:WebApi.Software.Utility.Repository.Data.BaseRepository`2">
             <summary>
             A generic repositiory pattern for apply basic C.R.U.D. (Create, Read, Update and Delete)
             operations on a given entity.
@@ -40,103 +40,103 @@
             <typeparam name="TEntity">The entity type that inhearits this class.</typeparam>
             <typeparam name="TKey">The entity primary key type that inhearits this class.</typeparam>
         </member>
-        <member name="F:OpenPath.Utility.Repository.Data.BaseRepository`2._dbContext">
+        <member name="F:WebApi.Software.Utility.Repository.Data.BaseRepository`2._dbContext">
             <summary>
             The base DB Context for the Resposity.
             </summary>
         </member>
-        <member name="F:OpenPath.Utility.Repository.Data.BaseRepository`2._dbSet">
+        <member name="F:WebApi.Software.Utility.Repository.Data.BaseRepository`2._dbSet">
             <summary>
             The DB Set to execute transactions against.
             </summary>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Constructor for building the base repository.
             </summary>
             <param name="dbContext">The DB Context for the Reposity.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.Create(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.Create(`0)">
             <summary>
             Creates a new entity associated to the Unit of Work.
             </summary>
             <param name="entity">The entity to create in the Unit of Work.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.CreateAsync(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.CreateAsync(`0)">
             <summary>
             Creates a new entity associated to the Unit of Work.
             </summary>
             <param name="entity">The entity to create in the Unit of Work.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.CreateRange(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.CreateRange(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Creates new entities associated to the Unit of Work.
             </summary>
             <param name="entities">A list of entities to create.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.CreateRangeAsync(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.CreateRangeAsync(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Creates new entities associated to the Unit of Work.
             </summary>
             <param name="entities">A list of entities to create.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.Read">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.Read">
             <summary>
             Builds a query of all the available entities in the database.
             </summary>
             <returns>A queryable list of entities.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.ReadById(`1)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.ReadById(`1)">
             <summary>
             Reads a single entity from the database based on the entity ID.
             </summary>
             <param name="id">The ID of the entity to read.</param>
             <returns>The complete entity, if found, associated to the ID.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.ReadByIdAsync(`1)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.ReadByIdAsync(`1)">
             <summary>
             Reads a single entity from the database based on the entity ID.
             </summary>
             <param name="id">The ID of the entity to read.</param>
             <returns>The complete entity, if found, associated to the ID.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.Update(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.Update(`0)">
             <summary>
             Updates changes made to the entity in the database context.
             </summary>
             <param name="entity">The entity to update.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.UpdateAsync(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.UpdateAsync(`0)">
             <summary>
             Updates changes made to the entity in the database context.
             </summary>
             <param name="entity">The entity to update.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.Delete(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.Delete(`0)">
             <summary>
             Deletes an entity..
             </summary>
             <param name="entity">The entity to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Deletes an group of entities.
             </summary>
             <param name="entities">A list of entities to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.DeleteById(`1)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.DeleteById(`1)">
             <summary>
             Deletes an entity by ID.
             </summary>
             <param name="id">The ID of the entity to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.DeleteRangeById(System.Collections.Generic.IEnumerable{`1})">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.DeleteRangeById(System.Collections.Generic.IEnumerable{`1})">
             <summary>
             Deletes a group of entities by ID's.
             </summary>
             <param name="ids">A list of entity ID's to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.Filter(System.Linq.IQueryable{`0},OpenPath.Utility.Repository.Interface.IFilter)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.Filter(System.Linq.IQueryable{`0},WebApi.Software.Utility.Repository.Interface.IFilter)">
             <summary>
             Filters an existing entity by a page and a limit.
             </summary>
@@ -144,19 +144,19 @@
             <param name="filter">The filter to apply to the query.</param>
             <returns>A filtered query.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Data.BaseRepository`2.getPrimaryKey(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Data.BaseRepository`2.getPrimaryKey(`0)">
             <summary>
             Finds the primary key value within an entity.
             </summary>
             <param name="entity">The entity to find the primary key value of.</param>
             <returns>The primary key value.</returns>
         </member>
-        <member name="T:OpenPath.Utility.Repository.Helper.DataHelper">
+        <member name="T:WebApi.Software.Utility.Repository.Helper.DataHelper">
             <summary>
             A static helper class to help with data objects.
             </summary>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Helper.DataHelper.CompareAndReplace``1(System.Object,System.Object)">
+        <member name="M:WebApi.Software.Utility.Repository.Helper.DataHelper.CompareAndReplace``1(System.Object,System.Object)">
             <summary>
             Looks at an existing object and determines if it is different, if it is it replaces the
             existing object with the new object.
@@ -166,35 +166,35 @@
             <param name="newObject">The new object that might have changes.</param>
             <returns></returns>
         </member>
-        <member name="T:OpenPath.Utility.Repository.Interface.IFilter">
+        <member name="T:WebApi.Software.Utility.Repository.Interface.IFilter">
             <summary>
             A generic filter to apply to entities.
             </summary>
         </member>
-        <member name="P:OpenPath.Utility.Repository.Interface.IFilter.Page">
+        <member name="P:WebApi.Software.Utility.Repository.Interface.IFilter.Page">
             <summary>
             The page number to return on the filter.
             </summary>
         </member>
-        <member name="P:OpenPath.Utility.Repository.Interface.IFilter.Limit">
+        <member name="P:WebApi.Software.Utility.Repository.Interface.IFilter.Limit">
             <summary>
             The amount or results to return on the filter.
             </summary>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IFilter.Clone">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IFilter.Clone">
             <summary>
             Clones the existing filter in a new memory space.
             </summary>
             <returns>A new copy of the filter.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IFilter.Clone(System.Int32)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IFilter.Clone(System.Int32)">
             <summary>
             Returns a clone +/- the page number of the original filter.
             </summary>
             <param name="page">The amount you want to up or down the filter page.</param>
             <returns>The filter +/- the page number.</returns>
         </member>
-        <member name="T:OpenPath.Utility.Repository.Interface.IRepository`2">
+        <member name="T:WebApi.Software.Utility.Repository.Interface.IRepository`2">
             <summary>
             A generic repositiory pattern for apply basic C.R.U.D. (Create, Read, Update and Delete)
             operations on a given entity.
@@ -202,87 +202,87 @@
             <typeparam name="TEntity">The entity type that inhearits this class.</typeparam>
             <typeparam name="TKey">The entity primary key type that inhearits this class.</typeparam>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.Create(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.Create(`0)">
             <summary>
             Creates a new entity associated to the Unit of Work.
             </summary>
             <param name="entity">The entity to create in the Unit of Work.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.CreateAsync(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.CreateAsync(`0)">
             <summary>
             Creates a new entity associated to the Unit of Work.
             </summary>
             <param name="entity">The entity to create in the Unit of Work.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.CreateRange(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.CreateRange(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Creates new entities associated to the Unit of Work.
             </summary>
             <param name="entities">A list of entities to create.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.CreateRangeAsync(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.CreateRangeAsync(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Creates new entities associated to the Unit of Work.
             </summary>
             <param name="entities">A list of entities to create.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.Read">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.Read">
             <summary>
             Builds a query of all the available entities in the database.
             </summary>
             <returns>A queryable list of entities.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.ReadById(`1)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.ReadById(`1)">
             <summary>
             Reads a single entity from the database based on the entity ID.
             </summary>
             <param name="id">The ID of the entity to read.</param>
             <returns>The complete entity, if found, associated to the ID.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.ReadByIdAsync(`1)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.ReadByIdAsync(`1)">
             <summary>
             Reads a single entity from the database based on the entity ID.
             </summary>
             <param name="id">The ID of the entity to read.</param>
             <returns>The complete entity, if found, associated to the ID.</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.Update(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.Update(`0)">
             <summary>
             Updates changes made to the entity in the database context.
             </summary>
             <param name="entity">The entity to update.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.UpdateAsync(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.UpdateAsync(`0)">
             <summary>
             Updates changes made to the entity in the database context.
             </summary>
             <param name="entity">The entity to update.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.Delete(`0)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.Delete(`0)">
             <summary>
             Deletes an entity..
             </summary>
             <param name="entity">The entity to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Deletes an group of entities.
             </summary>
             <param name="entities">A list of entities to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.DeleteById(`1)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.DeleteById(`1)">
             <summary>
             Deletes an entity by ID.
             </summary>
             <param name="id">The ID of the entity to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.DeleteRangeById(System.Collections.Generic.IEnumerable{`1})">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.DeleteRangeById(System.Collections.Generic.IEnumerable{`1})">
             <summary>
             Deletes a group of entities by ID's.
             </summary>
             <param name="ids">A list of entity ID's to delete.</param>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Interface.IRepository`2.Filter(System.Linq.IQueryable{`0},OpenPath.Utility.Repository.Interface.IFilter)">
+        <member name="M:WebApi.Software.Utility.Repository.Interface.IRepository`2.Filter(System.Linq.IQueryable{`0},WebApi.Software.Utility.Repository.Interface.IFilter)">
             <summary>
             Filters an existing entity by a page and a limit.
             </summary>
@@ -290,19 +290,19 @@
             <param name="filter">The filter to apply to the query.</param>
             <returns>A filtered query.</returns>
         </member>
-        <member name="T:OpenPath.Utility.Repository.Poco.FilterPoco">
+        <member name="T:WebApi.Software.Utility.Repository.Poco.FilterPoco">
             <summary>
             Specialized filter adding the ability to filter Planets by Planet Size, Minimum Equatorial
             Diameter and Maximum Diameter.
             </summary>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Poco.FilterPoco.Clone">
+        <member name="M:WebApi.Software.Utility.Repository.Poco.FilterPoco.Clone">
             <summary>
             Creates a clone of this filter with the same parameters.
             </summary>
             <returns>PlanetFilterPoco</returns>
         </member>
-        <member name="M:OpenPath.Utility.Repository.Poco.FilterPoco.Clone(System.Int32)">
+        <member name="M:WebApi.Software.Utility.Repository.Poco.FilterPoco.Clone(System.Int32)">
             <summary>
             Creates a clone of this filter changing the paging parameters to the page number.
             </summary>

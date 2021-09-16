@@ -1,4 +1,4 @@
-﻿namespace OpenPath.Utility.Repository.Helper {
+﻿namespace WebApi.Software.Utility.Repository.Helper {
 
     /// <summary>
     /// A static helper class to help with data objects.

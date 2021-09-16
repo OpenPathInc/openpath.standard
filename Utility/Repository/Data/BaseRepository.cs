@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OpenPath.Utility.Repository.Interface;
-using OpenPath.Utility.Repository.Poco;
+using WebApi.Software.Utility.Repository.Interface;
+using WebApi.Software.Utility.Repository.Poco;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenPath.Utility.Repository.Data {
+namespace WebApi.Software.Utility.Repository.Data {
 
     /// <summary>
     /// A generic repositiory pattern for apply basic C.R.U.D. (Create, Read, Update and Delete)

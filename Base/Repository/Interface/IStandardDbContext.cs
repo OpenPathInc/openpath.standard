@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OpenPath.Standard.Base.Data.Database;
+using WebApi.Software.Standard.Base.Data.Database;
 
-namespace OpenPath.Standard.Base.Repository.Interface {
+namespace WebApi.Software.Standard.Base.Repository.Interface {
 
     /// <summary>
     /// The base database connection context Interface for connecting to the database.

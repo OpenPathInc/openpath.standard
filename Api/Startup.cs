@@ -7,14 +7,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using OpenPath.Standard.Base.Repository;
-using OpenPath.Standard.Base.Repository.Interface;
-using OpenPath.Standard.Base.Service;
-using OpenPath.Standard.Base.Service.Interface;
+using WebApi.Software.Standard.Base.Repository;
+using WebApi.Software.Standard.Base.Repository.Interface;
+using WebApi.Software.Standard.Base.Service;
+using WebApi.Software.Standard.Base.Service.Interface;
 using System;
 using System.IO;
 
-namespace OpenPath.Standard.Api {
+namespace WebApi.Software.Standard.Api {
 
     /// <summary>
     /// The entry point to the application, setting up configuration and wiring up services the

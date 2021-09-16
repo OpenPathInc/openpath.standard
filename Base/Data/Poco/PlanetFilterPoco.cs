@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using OpenPath.Standard.Base.Data.Enumerator;
-using OpenPath.Utility.Repository.Abstract;
+using WebApi.Software.Standard.Base.Data.Enumerator;
+using WebApi.Software.Utility.Repository.Abstract;
 using System.ComponentModel.DataAnnotations;
 
-namespace OpenPath.Standard.Base.Data.Poco {
+namespace WebApi.Software.Standard.Base.Data.Poco {
 
     /// <summary>
     /// Specialized filter adding the ability to filter Planets by Planet Size, Minimum Equatorial

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>OpenPath.Standard.Base.Repository</AssemblyName>
-    <RootNamespace>OpenPath.Standard.Base.Repository</RootNamespace>
+    <AssemblyName>WebApiSoftware-Standard-Repo</AssemblyName>
+    <RootNamespace>WebApi.Software.Standard.Base.Repository</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

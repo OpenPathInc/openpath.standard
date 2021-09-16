@@ -1,8 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
-using OpenPath.Utility.Repository.Interface;
+using WebApi.Software.Utility.Repository.Interface;
 
-namespace OpenPath.Utility.Repository.Abstract {
+namespace WebApi.Software.Utility.Repository.Abstract {
 
     /// <summary>
     /// A generic filter for database models.

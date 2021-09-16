@@ -1,9 +1,9 @@
-﻿using OpenPath.Standard.Base.Data.Database;
-using OpenPath.Utility.Repository.Interface;
+﻿using WebApi.Software.Standard.Base.Data.Database;
+using WebApi.Software.Utility.Repository.Interface;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenPath.Standard.Base.Repository.Interface {
+namespace WebApi.Software.Standard.Base.Repository.Interface {
 
     /// <summary>
     /// The Interface for accessing Planet based data.

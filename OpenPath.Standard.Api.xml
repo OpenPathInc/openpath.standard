@@ -1,47 +1,47 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>OpenPath.Standard.Api</name>
+        <name>WebApiSoftware-Standard-Api</name>
     </assembly>
     <members>
-        <member name="T:OpenPath.Standard.Api.V1.Controllers.BaseContoller">
+        <member name="T:WebApi.Software.Standard.Api.V1.Controllers.BaseContoller">
             <summary>
             Base controller for API endpoints.
             </summary>
         </member>
-        <member name="P:OpenPath.Standard.Api.V1.Controllers.BaseContoller.LoggerFactory">
+        <member name="P:WebApi.Software.Standard.Api.V1.Controllers.BaseContoller.LoggerFactory">
             <summary>
             Represents a type used to configure the logging system and create instances of
             Microsoft.Extensions.Logging.ILogger from the registered
             Microsoft.Extensions.Logging.ILoggerProviders.
             </summary>
         </member>
-        <member name="P:OpenPath.Standard.Api.V1.Controllers.BaseContoller.Logger">
+        <member name="P:WebApi.Software.Standard.Api.V1.Controllers.BaseContoller.Logger">
             <summary>
             A generic interface for logging where the category name is derived from the specified
             TCategoryName type name. Generally used to enable activation of a named
             Microsoft.Extensions.Logging.ILogger from dependency injection.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Api.V1.Controllers.BaseContoller.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
+        <member name="M:WebApi.Software.Standard.Api.V1.Controllers.BaseContoller.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
             <summary>
             The Base endpoint constructor.
             </summary>
             <param name="loggerFactory">The Microsoft Logger Factory.</param>
         </member>
-        <member name="T:OpenPath.Standard.Api.V1.Controllers.PlanetsController">
+        <member name="T:WebApi.Software.Standard.Api.V1.Controllers.PlanetsController">
             <summary>
             Endpoints for managing Planet data.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,OpenPath.Standard.Base.Service.Interface.IPlanetService)">
+        <member name="M:WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,WebApi.Software.Standard.Base.Service.Interface.IPlanetService)">
             <summary>
             The Planets endpoint constructor.
             </summary>
             <param name="loggerFactory">The Microsoft Logger Factory.</param>
             <param name="planetService">Service to Manage Planets.</param>
         </member>
-        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{OpenPath.Standard.Base.Data.Database.PlanetModel})">
+        <member name="M:WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.PostAsync(System.Collections.Generic.IEnumerable{WebApi.Software.Standard.Base.Data.Database.PlanetModel})">
             <summary>
             Accepts an array of new or updated planets and either creates or updates them. This
             endpoint can handle a mixture of both.
@@ -55,70 +55,70 @@
             <response code="406">Returned if there was an issue creating or updating 1 or more planets.</response>
             <response code="500">Returned if there is an error within the API.</response>
         </member>
-        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(OpenPath.Standard.Base.Data.Poco.PlanetFilterPoco)">
+        <member name="M:WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.Get(WebApi.Software.Standard.Base.Data.Poco.PlanetFilterPoco)">
             <summary>
             Gets a filtered array of Planets.
             </summary>
             <param name="filter">Filter Parameters</param>
             <returns>Returns an evelope with filtered planets in the data.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.Get(System.String)">
+        <member name="M:WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.Get(System.String)">
             <summary>
             Returns a single Planet by Planet ID or Planet Key.
             </summary>
             <param name="idKey">The Planet ID or Key.</param>
             <returns>A an Envelope with Planet data.</returns>
         </member>
-        <member name="M:OpenPath.Standard.Api.V1.Controllers.PlanetsController.DeleteAsync(System.String)">
+        <member name="M:WebApi.Software.Standard.Api.V1.Controllers.PlanetsController.DeleteAsync(System.String)">
             <summary>
             Deletes a single Planet by Planet ID or Planet Key.
             </summary>
             <param name="idKey">The Planet ID or Key.</param>
             <returns>If the delete was successfull.</returns>
         </member>
-        <member name="T:OpenPath.Standard.Api.Program">
+        <member name="T:WebApi.Software.Standard.Api.Program">
             <summary>
             This is the main API program staring point that fires up the hosting services and Start Up
             class.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Api.Program.Main(System.String[])">
+        <member name="M:WebApi.Software.Standard.Api.Program.Main(System.String[])">
             <summary>
             This is the Main entry method to fire off the application.
             </summary>
             <param name="args">A string of optional parameters.</param>
         </member>
-        <member name="M:OpenPath.Standard.Api.Program.CreateHostBuilder(System.String[])">
+        <member name="M:WebApi.Software.Standard.Api.Program.CreateHostBuilder(System.String[])">
             <summary>
             Create the web host and fires off the Start Up class.
             </summary>
             <param name="args">Takes the arguments from the Main method.</param>
             <returns>A running web hosting environment.</returns>
         </member>
-        <member name="T:OpenPath.Standard.Api.Startup">
+        <member name="T:WebApi.Software.Standard.Api.Startup">
             <summary>
             The entry point to the application, setting up configuration and wiring up services the
             application will use.
             </summary>
         </member>
-        <member name="P:OpenPath.Standard.Api.Startup.Configuration">
+        <member name="P:WebApi.Software.Standard.Api.Startup.Configuration">
             <summary>
             Represents a set of key/value application configuration properties.
             </summary>
         </member>
-        <member name="M:OpenPath.Standard.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:WebApi.Software.Standard.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             The start up constructor for this class.
             </summary>
             <param name="configuration">Represents a set of key/value application configuration properties.</param>
         </member>
-        <member name="M:OpenPath.Standard.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:WebApi.Software.Standard.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             This method gets called by the runtime. Use this method to add services to the container.
             </summary>
             <param name="services">Specifies the contract for a collection of service descriptors.</param>
         </member>
-        <member name="M:OpenPath.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+        <member name="M:WebApi.Software.Standard.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>

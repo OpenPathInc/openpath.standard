@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using OpenPath.Utility.Repository.Interface;
+using WebApi.Software.Utility.Repository.Interface;
 using System;
 
-namespace OpenPath.Standard.Base.Data.Poco {
+namespace WebApi.Software.Standard.Base.Data.Poco {
 
     /// <summary>
     /// A structure for returning standardized data packets to a requesting service.
